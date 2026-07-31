@@ -3,70 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Figma Community - eCommerce UI Kit</title>
+<title>Figma Navbar</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Navbar -->
 <header class="navbar">
   <div class="nav-left">
-    <div class="logo">🎨 Community</div>
+    <a href="index.html" class="logo">
+      <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#0d99ff"/><path d="M2 17L12 22L22 17" stroke="#0d99ff" stroke-width="2"/><path d="M2 12L12 17L22 12" stroke="#0d99ff" stroke-width="2"/></svg>
+      Community
+    </a>
+
     <nav class="nav-links">
-      <a href="inspo.html" data-page="inspo">Inspo <span class="beta">Beta</span></a>
-      <a href="design.html" data-page="design">Design resources ▼</a>
-      <a href="websites.html" data-page="websites">Websites ▼</a>
-      <a href="figmamake.html" data-page="figmamake">Figma Make</a>
-      <a href="extensions.html" data-page="extensions">Extensions ▼</a>
-      <a href="whiteboard.html" data-page="whiteboard">Whiteboarding ▼</a>
-      <a href="presentations.html" data-page="presentations">Presentations ▼</a>
+      <a href="inspo.html" class="nav-item">
+        Inspo <span class="beta">Beta</span>
+      </a>
+      <a href="design.html" class="nav-item">Design resources <span class="arrow">▼</span></a>
+      <a href="websites.html" class="nav-item">Websites <span class="arrow">▼</span></a>
+      <a href="figmamake.html" class="nav-item">Figma Make</a>
+      <a href="extensions.html" class="nav-item">Extensions <span class="arrow">▼</span></a>
+      <a href="whiteboard.html" class="nav-item">Whiteboarding <span class="arrow">▼</span></a>
+      <a href="presentations.html" class="nav-item">Presentations <span class="arrow">▼</span></a>
     </nav>
   </div>
+
   <div class="nav-right">
     <div class="search-box">
       <span>🔍</span>
       <input type="text" id="searchInput" placeholder="Search">
     </div>
-    <a href="login.html" class="btn-login">Log in</a>
-    <a href="signup.html" class="btn-signup">Sign up</a>
+    <a href="login.html" class="btn btn-login">Log in</a>
+    <a href="signup.html" class="btn btn-signup">Sign up</a>
   </div>
+
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 </header>
 
-<!-- Breadcrumb -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav class="mobile-nav-links">
+    <a href="inspo.html" class="nav-item">Inspo <span class="beta">Beta</span></a>
+    <a href="design.html" class="nav-item">Design resources</a>
+    <a href="websites.html" class="nav-item">Websites</a>
+    <a href="figmamake.html" class="nav-item">Figma Make</a>
+    <a href="extensions.html" class="nav-item">Extensions</a>
+    <a href="whiteboard.html" class="nav-item">Whiteboarding</a>
+    <a href="presentations.html" class="nav-item">Presentations</a>
+  </nav>
+  <div class="mobile-actions">
+    <div class="search-box mobile-search">
+      <span>🔍</span>
+      <input type="text" id="mobileSearch" placeholder="Search">
+    </div>
+    <a href="login.html" class="btn btn-login">Log in</a>
+    <a href="signup.html" class="btn btn-signup">Sign up</a>
+  </div>
+</div>
+<!-- hero section -->
+ <!-- Breadcrumb -->
 <div class="breadcrumb">
-  <a href="index.html">🏠</a> <span>›</span> <span>Website templates</span>
+  <a href="index.html">🏠</a> <span>›</span> <a href="templates.html">Website templates</a>
 </div>
 
-<!-- Main Content -->
-<main class="container">
-  <div class="left-content">
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-left">
     <div class="author">
-      <img src="https://i.pravatar.cc/40" alt="author">
+      <img src="https://i.pravatar.cc/32?u=aashifa" alt="Aashifa">
       <span>UI-UX Expert (Aashifa)</span>
     </div>
-    
+
     <h1>eCommerce Website | <br>Web Page Design | UI KIT | <br>Interior Landing Page</h1>
-    
+
     <div class="stats">
-      <span>Design file</span> • 
-      <span>❤️ <span id="likeCount">2.1k</span></span> • 
+      <span>Design file</span> •
+      <span>❤️ <span id="likeCount">2.1k</span></span> •
       <span>👤 147k users</span>
     </div>
 
-    <button id="openFigmaBtn" class="btn-primary">Open in Figma</button>
+    <button id="openFigmaBtn" class="btn-primary">
+      Open in Figma
+    </button>
 
     <!-- Tabs -->
     <div class="tabs">
       <button class="tab active" data-tab="about">About</button>
       <button class="tab" data-tab="comments">Comments <span>26</span></button>
     </div>
+
+    <div id="tabContent" class="tab-content">
+ 
+    </div>
   </div>
 
-  <div class="right-content">
-    <img src="https://placehold.co/600x400/f5e6d3/d4a017?text=FURNITURE+Landing+Page" alt="Preview" class="preview-img">
+  <div class="hero-right">
+    <img src="https://placehold.co/800x600/FED7C0/C9A227?text=FURNITURE+Landing+Page+Preview" alt="Furniture UI Kit" class="preview-img">
   </div>
-</main>
-
-<script src="app.js" type="module"></script>
+</section>
+<script src="app.js"></script>
 </body>
 </html>

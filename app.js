@@ -1,153 +1,145 @@
-// ES6 Next Level JavaScript
+// ES6 Features: Arrow Functions, Classes, LocalStorage, Event Delegation
 
-// 1. Page Navigation Handler - All navbar + login + signup
-document.querySelectorAll('.nav-links a,.btn-login,.btn-signup').forEach(link => {
-  link.addEventListener('click', (e) => {
-    const href = link.getAttribute('href');
-    if(href!== '#'){
-      e.preventDefault();
-      document.body.style.opacity = '0';
-      setTimeout(() => {
-        window.location.href = href; // New page open
-      }, 200);
-    }
-  });
-});
+class Navbar {
+  constructor() {
+    this.init();
+  }
 
-// 2. Tab Content - About / Comments 26
-const tabContent = {
-  about: `
-    <h3>About this Design</h3>
-    <p>This is a clean eCommerce Furniture Landing Page UI Kit.
-    Easy to customize for your next project. Includes 5+ pages,
-    responsive design, and modern components.</p>
-    <ul style="margin-top:12px; padding-left:20px;">
-      <li>Fully Responsive</li>
-      <li>Figma + HTML + CSS included</li>
-      <li>Free for commercial use</li>
-    </ul>
-  `,
-  comments: `
-    <h3>Comments - 26</h3>
-    <div class="comment-list">
-      <div class="comment">
-        <img src="https://i.pravatar.cc/32?img=1">
-        <div>
-          <b>Ali Khan</b> <span>2 days ago</span>
-          <p>Amazing design! Very clean and modern 🔥</p>
-        </div>
-      </div>
-      <div class="comment">
-        <img src="https://i.pravatar.cc/32?img=2">
-        <div>
-          <b>Sara Ahmed</b> <span>1 week ago</span>
-          <p>Love the color palette. Can you share Figma file?</p>
-        </div>
-      </div>
-      <div class="comment">
-        <img src="https://i.pravatar.cc/32?img=3">
-        <div>
-          <b>Usman</b> <span>3 weeks ago</span>
-          <p>Best UI kit I found this month. Thanks!</p>
-        </div>
-      </div>
-    </div>
-    <textarea id="newComment" placeholder="Add a comment..."></textarea>
-    <button id="postComment" class="btn-primary" style="margin-top:10px;">Post Comment</button>
-  `
-};
+  init = () => {
+    this.handleNavigation();
+    this.handleSearch();
+    this.handleMobileMenu();
+    this.addPageTransition();
+  }
 
-const tabs = document.querySelectorAll('.tab');
-const contentArea = document.createElement('div');
-contentArea.className = 'tab-content';
-document.querySelector('.left-content').appendChild(contentArea);
+  // 1. Click pe New Page Open
+  handleNavigation = () => {
+    document.querySelectorAll('.nav-item, .btn-login, .btn-signup, .logo').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = link.getAttribute('href');
+        
+        // Ripple effect
+        this.createRipple(e, link);
+        
+        // Smooth fade out then redirect
+        document.body.style.transition = 'opacity 0.2s';
+        document.body.style.opacity = '0';
+        
+        setTimeout(() => {
+          window.location.href = href; // New page open
+        }, 200);
+      });
+    });
+  }
 
-// Default: About show karo
-contentArea.innerHTML = tabContent.about;
+  // 2. Search with Debounce
+  handleSearch = () => {
+    const searchInput = document.getElementById('searchInput');
+    let timer;
+    
+    searchInput?.addEventListener('input', (e) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        const query = e.target.value.trim();
+        if(query.length > 2){
+          localStorage.setItem('lastSearch', query);
+          this.showToast(`Searching: "${query}"`);
+        }
+      }, 400);
+    });
+  }
 
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
+  // 3. Mobile Menu Toggle
+  handleMobileMenu = () => {
+    const toggle = document.getElementById('mobileToggle');
+    const menu = document.getElementById('mobileMenu');
 
-    const tabName = tab.dataset.tab;
-    contentArea.innerHTML = tabContent[tabName];
-    showToast(`Switched to ${tabName} tab`);
+    toggle?.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.textContent = isOpen ? '✕' : '☰';
+      document.body.classList.toggle('menu-open', isOpen);
+    });
 
-    // Agar comments tab hai to post button chalao
-    if(tabName === 'comments'){
-      document.getElementById('postComment')?.addEventListener('click', postNewComment);
-    }
-  });
-});
+    document.querySelectorAll('.mobile-nav-links a, .mobile-actions a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu?.classList.remove('active');
+        toggle?.setAttribute('aria-expanded', 'false');
+        if (toggle) toggle.textContent = '☰';
+        document.body.classList.remove('menu-open');
+      });
+    });
+  }
 
-// 3. Post New Comment
-const postNewComment = () => {
-  const input = document.getElementById('newComment');
-  if(input.value.trim() === '') return showToast('Comment cannot be empty ⚠️');
+  // 4. Ripple Effect on Click
+  createRipple = (e, element) => {
+    const ripple = document.createElement('span');
+    const rect = element.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    
+    ripple.style.cssText = `
+      position: absolute;
+      width: ${size}px;
+      height: ${size}px;
+      left: ${e.clientX - rect.left - size/2}px;
+      top: ${e.clientY - rect.top - size/2}px;
+      background: rgba(13,153,255,0.3);
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+    `;
+    
+    element.style.position = 'relative';
+    element.style.overflow = 'hidden';
+    element.appendChild(ripple);
+    
+    setTimeout(() => ripple.remove(), 600);
+  }
 
-  // New comment ko top pe add kar do
-  const newCommentHTML = `
-    <div class="comment">
-      <img src="https://i.pravatar.cc/32?u=new">
-      <div>
-        <b>You</b> <span>Just now</span>
-        <p>${input.value}</p>
-      </div>
-    </div>
-  `;
-  document.querySelector('.comment-list').insertAdjacentHTML('afterbegin', newCommentHTML);
-  input.value = '';
-  showToast('Comment Posted ✅');
-};
+  // 5. Toast Notification
+  showToast = (message) => {
+    const toast = document.createElement('div');
+    toast.textContent = message;
+    Object.assign(toast.style, {
+      position: 'fixed', bottom: '20px', right: '20px',
+      background: '#111', color: 'white', padding: '12px 20px',
+      borderRadius: '8px', zIndex: '9999', opacity: '0',
+      transition: 'opacity 0.3s', fontSize: '14px'
+    });
+    document.body.appendChild(toast);
+    setTimeout(() => toast.style.opacity = '1', 100);
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      setTimeout(() => document.body.removeChild(toast), 300);
+    }, 2000);
+  }
 
-// 4. Like Counter
-const likeCountEl = document.getElementById('likeCount');
-let likes = localStorage.getItem('likes') || 2100;
-const formatNumber = (num) => num >= 1000? (num/1000).toFixed(1) + 'k' : num;
-likeCountEl.textContent = formatNumber(likes);
+  // 6. Page Load Animation
+  addPageTransition = () => {
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.style.opacity = '1';
+    });
+  }
+}
 
-// 5. Open in Figma Button
-document.getElementById('openFigmaBtn').addEventListener('click', () => {
-  showToast('Opening in Figma... 🚀');
-  setTimeout(() => {
-    window.open('https://www.figma.com', '_blank');
-  }, 800);
-});
+// Ripple animation CSS
+const style = document.createElement('style');
+style.textContent = `
+@keyframes ripple {
+  to { transform: scale(4); opacity: 0; }
+}
+`;
+document.head.appendChild(style);
 
-// 6. Search with Debounce
-const searchInput = document.getElementById('searchInput');
-let debounceTimer;
-searchInput.addEventListener('input', (e) => {
-  clearTimeout(debounceTimer);
-  debounceTimer = setTimeout(() => {
-    const query = e.target.value;
-    if(query.length > 2){
-      showToast(`Searching: ${query}`);
-    }
-  }, 500);
-});
+// Navbar ko start karo
+new Navbar();
+// hero section
+const buttons = document.querySelectorAll(".btn");
 
-// 7. Toast Notification
-const showToast = (message) => {
-  const toast = document.createElement('div');
-  toast.textContent = message;
-  Object.assign(toast.style, {
-    position: 'fixed', bottom: '20px', right: '20px',
-    background: '#111', color: 'white', padding: '12px 20px',
-    borderRadius: '8px', zIndex: '999', opacity: '0',
-    transition: 'opacity 0.3s', fontSize: '14px'
-  });
-  document.body.appendChild(toast);
-  setTimeout(() => toast.style.opacity = '1', 100);
-  setTimeout(() => {
-    toast.style.opacity = '0';
-    setTimeout(() => document.body.removeChild(toast), 300);
-  }, 2000);
-};
-
-// 8. Page Load Animation
-window.addEventListener('DOMContentLoaded', () => {
-  document.body.style.transition = 'opacity 0.3s';
-  document.body.style.opacity = '1';
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        alert(`${button.innerText} clicked`);
+    });
 });
