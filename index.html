@@ -1,105 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Figma Navbar</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figma Community Navbar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<header class="navbar">
-  <div class="nav-left">
-    <a href="index.html" class="logo">
-      <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#0d99ff"/><path d="M2 17L12 22L22 17" stroke="#0d99ff" stroke-width="2"/><path d="M2 12L12 17L22 12" stroke="#0d99ff" stroke-width="2"/></svg>
-      Community
-    </a>
+    <header class="navbar-header">
+        <div class="navbar-container">
+            
+            <div class="navbar-left">
+                <a href="#" class="navbar-logo">
+                    <span class="figma-icon">
+                        <span class="dot red"></span>
+                        <span class="dot purple"></span>
+                        <span class="dot blue"></span>
+                        <span class="dot green"></span>
+                        <span class="dot orange"></span>
+                    </span>
+                    <span class="logo-text">Community</span>
+                </a>
 
-    <nav class="nav-links">
-      <a href="inspo.html" class="nav-item">
-        Inspo <span class="beta">Beta</span>
-      </a>
-      <a href="design.html" class="nav-item">Design resources <span class="arrow">▼</span></a>
-      <a href="websites.html" class="nav-item">Websites <span class="arrow">▼</span></a>
-      <a href="figmamake.html" class="nav-item">Figma Make</a>
-      <a href="extensions.html" class="nav-item">Extensions <span class="arrow">▼</span></a>
-      <a href="whiteboard.html" class="nav-item">Whiteboarding <span class="arrow">▼</span></a>
-      <a href="presentations.html" class="nav-item">Presentations <span class="arrow">▼</span></a>
+                <nav class="nav-links" id="navLinks">
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">Inspo <span class="beta-badge">Beta</span></a>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Design resources <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="#">UI Kits</a>
+                            <a href="#">Icons</a>
+                            <a href="#">Wireframes</a>
+                            <a href="#">Templates</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Websites <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="#">Landing Pages</a>
+                            <a href="#">Portfolios</a>
+                            <a href="#">Blogs</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">Figma Make</a>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Extensions <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="#">Plugins</a>
+                            <a href="#">Widgets</a>
+                            <a href="#">Code Connect</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Whiteboarding <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="#">Templates</a>
+                            <a href="#">Brainstorming</a>
+                            <a href="#">Diagrams</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Presentations <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="#">Pitch Decks</a>
+                            <a href="#">Slides</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="navbar-right">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search" class="search-input" id="searchInput">
+                </div>
+
+                <a href="login.html" class="btn-login" id="loginBtn">Log in</a>
+
+                <a href="signup.html" class="btn-signup" id="signupBtn">Sign up</a>
+
+                <div class="menu-toggle" id="mobileMenuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <!-- <herosection -->
+     <!-- <header class="navbar-header">
+        <div class="navbar-container">
+            <div class="navbar-left">
+                <a href="#" class="navbar-logo">
+                    <span class="figma-icon">
+                        <span class="dot red"></span>
+                        <span class="dot purple"></span>
+                        <span class="dot blue"></span>
+                        <span class="dot green"></span>
+                        <span class="dot orange"></span>
+                    </span>
+                    <span class="logo-text">Community</span>
+                </a>
+
+                <nav class="nav-links" id="navLinks">
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">Inspo <span class="beta-badge">Beta</span></a>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Design resources <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="#">UI Kits</a>
+                            <a href="#">Icons</a>
+                            <a href="#">Wireframes</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Websites <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="#">Landing Pages</a>
+                            <a href="#">Portfolios</a>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">Figma Make</a>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Extensions <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="#">Plugins</a>
+                            <a href="#">Widgets</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Whiteboarding <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="#">Templates</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Presentations <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="#">Pitch Decks</a>
+                        </div>
+                    </div>
+                </nav>
+            </div> -->
+
+            <!-- <div class="navbar-right">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search" class="search-input" id="searchInput">
+                </div>
+                <a href="#" class="btn-login" id="loginBtn">Log in</a>
+                <a href="#" class="btn-signup" id="signupBtn">Sign up</a>
+                <div class="menu-toggle" id="mobileMenuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header> -->
+
+    <div class="breadcrumb-container">
+        <a href="#"><i class="fa-solid fa-house"></i></a>
+        <span class="separator">›</span>
+        <span class="current-crumb">Website templates</span>
+    </div>
+
+    <main class="main-content">
+        <div class="content-container">
+            
+            <div class="left-panel">
+                <div class="creator-info">
+                    <div class="creator-avatar">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces" alt="UI-UX Expert">
+                    </div>
+                    <span class="creator-name">UI-UX Expert (Aashifa)</span>
+                </div>
+
+                <h1 class="resource-title">
+                    eCommerce Website | Web Page Design | UI KIT | Interior Landing Page
+                </h1>
+
+                <div class="resource-stats">
+                    <span class="stat-item">Design file</span>
+                    <span class="stat-dot">•</span>
+                    <span class="stat-item"><i class="fa-regular fa-heart"></i> 2.1k</span>
+                    <span class="stat-dot">•</span>
+                    <span class="stat-item"><i class="fa-regular fa-user"></i> 148k users</span>
+                </div>
+
+                <button class="btn-open-figma" id="openFigmaBtn">
+                    <i class="fa-brands fa-figma"></i> Open in Figma
+                </button>
+            </div>
+
+            <div class="right-panel">
+                <div class="preview-banner">
+                    <div class="banner-left-text">
+                        <span class="banner-tag">FURNITURE</span>
+                        <h2 class="banner-subtitle">Landing Page</h2>
+                        <p class="banner-desc">The eCommerce Website design template is easy to customize, making it even easier for you to design your next website or project, and speed up your design workflow.</p>
+                        
+                        <div class="banner-links">
+                            <a href="#"><i class="fa-solid fa-globe"></i> https://uiuxexperts.with.uk/portfolio/</a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i> aashifasheikh12</a>
+                            <a href="#"><i class="fa-brands fa-linkedin"></i> /in/aashifasheikh12/</a>
+                        </div>
+                    </div>
+
+                    <div class="banner-mockup">
+                        <div class="mockup-window main-window">
+                            <div class="mockup-header">
+                                <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="mockup-content-header">
+                                    <span class="logo-mini">A Furniture</span>
+                                    <div class="mini-links"><span>Home</span><span>Shop</span><span>About</span><span>Contact</span></div>
+                                </div>
+                                <div class="hero-card-preview">
+                                    <div class="hero-text-box">
+                                        <h4>Discover Our New Collection</h4>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                    <div class="hero-img-box"></div>
+                                </div>
+                                <div class="products-grid-preview">
+                                    <div class="prod-card"></div>
+                                    <div class="prod-card"></div>
+                                    <div class="prod-card"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <nav class="tabs-navigation">
+        <div class="tabs-container">
+            <button class="tab-btn active" data-tab="about">About</button>
+            <button class="tab-btn" data-tab="comments">Comments <span class="badge-count">26</span></button>
+        </div>
     </nav>
-  </div>
+<!-- section 01 -->
+ <section class="about-section">
+        <div class="about-container">
+            
+            <div class="about-description">
+                <p>The eCommerce Website UI Kit design template is easy to customise, making it even easier for you to design your next Website or project, and speed up your design workflow.</p>
+                
+                <p class="mt-20">Hope you guys enjoy and press 👍 if you like it. Any feedback or comment? Feel free to leave comments below. Have an amazing project?🤔<br>I'm Available for any project🥰</p>
 
-  <div class="nav-right">
-    <div class="search-box">
-      <span>🔍</span>
-      <input type="text" id="searchInput" placeholder="Search">
-    </div>
-    <a href="login.html" class="btn btn-login">Log in</a>
-    <a href="signup.html" class="btn btn-signup">Sign up</a>
-  </div>
+                <p class="mt-20">Get more awesome products! 👇👇👇<br>
+                    <a href="#" class="highlight-link" id="uiuxExpertLink">UIUX-Expert</a>
+                </p>
 
-  <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-</header>
+                <p class="mt-20">Make your project more awesome!<br>
+                    <strong>Connect with me:</strong> <a href="mailto:contact.uiuxexperts@gmail.com" class="email-link">contact.uiuxexperts@gmail.com</a>
+                </p>
 
-<div class="mobile-menu" id="mobileMenu">
-  <nav class="mobile-nav-links">
-    <a href="inspo.html" class="nav-item">Inspo <span class="beta">Beta</span></a>
-    <a href="design.html" class="nav-item">Design resources</a>
-    <a href="websites.html" class="nav-item">Websites</a>
-    <a href="figmamake.html" class="nav-item">Figma Make</a>
-    <a href="extensions.html" class="nav-item">Extensions</a>
-    <a href="whiteboard.html" class="nav-item">Whiteboarding</a>
-    <a href="presentations.html" class="nav-item">Presentations</a>
-  </nav>
-  <div class="mobile-actions">
-    <div class="search-box mobile-search">
-      <span>🔍</span>
-      <input type="text" id="mobileSearch" placeholder="Search">
-    </div>
-    <a href="login.html" class="btn btn-login">Log in</a>
-    <a href="signup.html" class="btn btn-signup">Sign up</a>
-  </div>
-</div>
-<!-- hero section -->
- <!-- Breadcrumb -->
-<div class="breadcrumb">
-  <a href="index.html">🏠</a> <span>›</span> <a href="templates.html">Website templates</a>
-</div>
+                <p class="mt-20">More you can find me at:<br>
+                    <span class="social-links-inline">
+                        <a href="#" class="social-link" data-name="Dribbble">Dribbble</a> | 
+                        <a href="#" class="social-link" data-name="Behance">Behance</a> | 
+                        <a href="#" class="social-link" data-name="Instagram">Instagram</a> | 
+                        <a href="#" class="social-link" data-name="LinkedIn">LinkedIn</a>
+                    </span>
+                </p>
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-left">
-    <div class="author">
-      <img src="https://i.pravatar.cc/32?u=aashifa" alt="Aashifa">
-      <span>UI-UX Expert (Aashifa)</span>
-    </div>
+                <h3 class="preview-heading">Preview</h3>
+            </div>
 
-    <h1>eCommerce Website | <br>Web Page Design | UI KIT | <br>Interior Landing Page</h1>
+            <aside class="about-sidebar">
+                <div class="sidebar-box">
+                    <h4 class="sidebar-title">Tags</h4>
+                    <div class="tag-pill-primary tag-item">Interior design</div>
+                    <div class="tags-grid">
+                        <a href="#" class="tag-link">#ecommerce</a>
+                        <a href="#" class="tag-link">#ecommerce app</a>
+                        <a href="#" class="tag-link">#ecommerce ui kit</a>
+                        <a href="#" class="tag-link">#ecommerce website</a>
+                        <a href="#" class="tag-link">#homepage</a>
+                        <a href="#" class="tag-link">#landing page</a>
+                        <a href="#" class="tag-link">#online shop</a>
+                        <a href="#" class="tag-link">#online store</a>
+                        <a href="#" class="tag-link">#shop</a>
+                        <a href="#" class="tag-link">#shopping websites</a>
+                    </div>
+                </div>
 
-    <div class="stats">
-      <span>Design file</span> •
-      <span>❤️ <span id="likeCount">2.1k</span></span> •
-      <span>👤 147k users</span>
-    </div>
+                <hr class="sidebar-divider">
 
-    <button id="openFigmaBtn" class="btn-primary">
-      Open in Figma
-    </button>
+                <div class="sidebar-box">
+                    <h4 class="sidebar-title">Share</h4>
+                    <div class="share-buttons">
+                        <button class="share-btn" id="copyLinkBtn" title="Copy Link"><i class="fa-solid fa-link"></i></button>
+                        <button class="share-btn" id="twitterShareBtn" title="Share on Twitter"><i class="fa-solid fa-x-twitter"></i></button>
+                        <button class="share-btn" id="fbShareBtn" title="Share on Facebook"><i class="fa-brands fa-facebook-f"></i></button>
+                    </div>
+                </div>
 
-    <!-- Tabs -->
-    <div class="tabs">
-      <button class="tab active" data-tab="about">About</button>
-      <button class="tab" data-tab="comments">Comments <span>26</span></button>
-    </div>
+                <hr class="sidebar-divider">
 
-    <div id="tabContent" class="tab-content">
- 
-    </div>
-  </div>
+                <div class="sidebar-footer-badge">
+                    <i class="fa-brands fa-figma"></i> For Figma
+                </div>
+            </aside>
 
-  <div class="hero-right">
-    <img src="https://placehold.co/800x600/FED7C0/C9A227?text=FURNITURE+Landing+Page+Preview" alt="Furniture UI Kit" class="preview-img">
-  </div>
-</section>
-<script src="app.js"></script>
+        </div>
+    </section>
+    <!-- section 02 -->
+     <section class="preview-section-wrapper">
+        <div class="preview-main-container">
+            
+            <div class="canvas-viewport" id="canvasViewport">
+                <div class="canvas-banner-card" id="canvasCard">
+                    <div class="banner-left-content">
+                        <span class="canvas-tag">FURNITURE</span>
+                        <h2 class="canvas-subtitle">Landing Page</h2>
+                        <p class="canvas-desc">The eCommerce Website design template is easy to customize, making it even easier for you to design your next website or project, and speed up your design workflow.</p>
+                        
+                        <div class="canvas-links">
+                            <a href="#"><i class="fa-solid fa-globe"></i> https://uiuxexperts.github.io/portfolio/</a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i> aashifasheikh12</a>
+                            <a href="#"><i class="fa-brands fa-behance"></i> /in/aashifasheikh12</a>
+                        </div>
+                    </div>
+
+                    <div class="canvas-mockup-wrapper">
+                        <div class="mockup-window-main">
+                            <div class="mockup-top-bar">
+                                <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+                            </div>
+                            <div class="mockup-inner-body">
+                                <div class="mockup-nav-row">
+                                    <span class="mockup-logo-txt">▲ Fumiro</span>
+                                    <div class="mockup-menu-links"><span>Home</span><span>Shop</span><span>About</span><span>Contact</span></div>
+                                </div>
+                                <div class="mockup-hero-box">
+                                    <div class="mockup-hero-text">
+                                        <h5>Discover Our New Collection</h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit et…</p>
+                                    </div>
+                                    <div class="mockup-hero-img"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="canvas-floating-toolbar">
+                    <div class="toolbar-dropdown" id="pageDropdownToggle">
+                        <span>Page: <strong>Cover</strong></span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <div class="toolbar-menu" id="toolbarMenu">
+                            <a href="#" class="active-page">Cover</a>
+                            <a href="#">Landing Page Design</a>
+                            <a href="#">UI Kit & Style Guide</a>
+                        </div>
+                    </div>
+
+                    <div class="zoom-controls">
+                        <button class="zoom-btn" id="zoomOutBtn"><i class="fa-solid fa-minus"></i></button>
+                        <span class="zoom-value" id="zoomValueText">44%</span>
+                        <button class="zoom-btn" id="zoomInBtn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="zoom-btn fullscreen-btn" id="fullscreenBtn" title="Toggle Fullscreen"><i class="fa-solid fa-expand"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="preview-sidebar">
+                <div class="meta-item">
+                    <span class="meta-label">Last updated</span>
+                    <span class="meta-value">3 years ago</span>
+                </div>
+
+                <div class="meta-item">
+                    <span class="meta-label">Support</span>
+                    <a href="mailto:contact.uiuxexperts@gmail.com" class="meta-link-value" title="contact.uiuxexperts@gmail.com">contact.uiuxexperts@gm...</a>
+                </div>
+
+                <div class="meta-item">
+                    <span class="meta-label">Licensed under</span>
+                    <a href="#" class="meta-link-value license-blue">CC BY 4.0</a>
+                </div>
+            </aside>
+
+        </div>
+    </section>
+    <script src="app.js"></script>
 </body>
 </html>
