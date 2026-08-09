@@ -1349,3 +1349,127 @@ body {
         gap: 12px;
     }
 }
+
+/* input customer */
+ /* *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#f5f5f5;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+      padding:20px;
+    } */
+
+    .comment-box{
+      width:100%;
+      max-width:970px;
+      background:#fff;
+      border:1px solid #ddd;
+      border-radius:12px;
+      padding:12px 16px;
+      margin:32px auto 0;
+
+      display:flex;
+      align-items:center;
+      gap:12px;
+
+      transition:0.3s;
+    }
+
+    .comment-box:hover{
+      box-shadow:0 8px 25px rgba(0,0,0,0.12);
+      transform:translateY(-3px);
+    }
+
+    .avatar{
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      background:#ffbf00;
+      color:#fff;
+      font-size:18px;
+      font-weight:bold;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      transition:0.3s;
+    }
+
+    .avatar:hover{
+      transform:scale(1.1) rotate(10deg);
+    }
+
+    .comment-input{
+      flex:1;
+      border:none;
+      outline:none;
+      font-size:16px;
+      color:#555;
+      background:transparent;
+    }
+
+    .comment-input::placeholder{
+      color:#b0b0b0;
+    }
+
+    .post-btn{
+      border:none;
+      background:#2563eb;
+      color:white;
+      padding:12px 30px;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:15px;
+      font-weight:600;
+
+      transition:0.3s;
+    }
+
+    .post-btn:hover{
+      background:#1d4ed8;
+      transform:translateY(-2px);
+      box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Tablet */
+
+    @media (max-width:768px){
+
+      .comment-box{
+        padding:10px;
+      }
+
+      .post-btn{
+        padding:10px 22px;
+      }
+
+    }
+
+    /* Mobile */
+
+    @media (max-width:500px){
+
+      .comment-box{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .comment-input{
+        width:100%;
+        padding:10px 0;
+      }
+
+      .post-btn{
+        width:100%;
+      }
+
+    }
