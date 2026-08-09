@@ -1,141 +1,336 @@
-// Dropdown functionality for desktop/mobile clicks
-const dropdowns = document.querySelectorAll('.dropdown');
+// ==========================================
+// NAVBAR & WEBSITE JAVASCRIPT
+// ==========================================
 
-dropdowns.forEach(dropdown => {
-    const toggleBtn = dropdown.querySelector('.dropdown-toggle');
-    
-    toggleBtn.addEventListener('click', (e) => {
+
+// ==========================================
+// DROPDOWN FUNCTIONALITY
+// ==========================================
+
+const dropdowns = document.querySelectorAll(".dropdown");
+
+dropdowns.forEach((dropdown) => {
+
+    const toggleBtn =
+        dropdown.querySelector(".dropdown-toggle");
+
+    if (!toggleBtn) return;
+
+    toggleBtn.addEventListener("click", (e) => {
+
         e.preventDefault();
-        
-        // Close other open dropdowns
-        dropdowns.forEach(item => {
+        e.stopPropagation();
+
+        // Close all other dropdowns
+        dropdowns.forEach((item) => {
+
             if (item !== dropdown) {
-                item.classList.remove('active');
+                item.classList.remove("active");
             }
+
         });
-        
+
         // Toggle current dropdown
-        dropdown.classList.toggle('active');
+        dropdown.classList.toggle("active");
+
     });
+
 });
 
-// Close dropdowns when clicking outside
-window.addEventListener('click', (e) => {
-    if (!e.target.closest('.dropdown')) {
-        dropdowns.forEach(dropdown => {
-            dropdown.classList.remove('active');
+
+// ==========================================
+// CLOSE DROPDOWN WHEN CLICKING OUTSIDE
+// ==========================================
+
+window.addEventListener("click", (e) => {
+
+    if (!e.target.closest(".dropdown")) {
+
+        dropdowns.forEach((dropdown) => {
+
+            dropdown.classList.remove("active");
+
         });
+
     }
+
 });
 
-// Mobile menu toggle functionality
-const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-const navLinks = document.getElementById('navLinks');
 
-mobileMenuToggle?.addEventListener('click', () => {
-    navLinks?.classList.toggle('mobile-active');
-});
+// ==========================================
+// MOBILE MENU
+// ==========================================
 
-// Make nav links interactive on click
-const navLinkItems = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
-navLinkItems.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        alert(`Clicked: ${link.textContent.trim()}`);
-        if (navLinks?.classList.contains('mobile-active')) {
-            navLinks.classList.remove('mobile-active');
-        }
+const mobileMenuToggle =
+    document.getElementById("mobileMenuToggle");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+
+if (mobileMenuToggle && navLinks) {
+
+    mobileMenuToggle.addEventListener("click", (e) => {
+
+        e.stopPropagation();
+
+        // Open / close mobile menu
+        navLinks.classList.toggle("mobile-active");
+
+        // Hamburger animation
+        mobileMenuToggle.classList.toggle("active");
+
     });
-});
 
-// Button handlers for login/signup navigation
-const loginButton = document.getElementById('loginBtn');
-const signupButton = document.getElementById('signupBtn');
+}
 
-loginButton?.addEventListener('click', () => {
-    window.location.href = 'login.html';
-});
 
-signupButton?.addEventListener('click', () => {
-    window.location.href = 'signup.html';
-});
+// ==========================================
+// MOBILE NAV LINKS
+// ==========================================
 
-const searchInput = document.getElementById('searchInput');
-searchInput?.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        alert(`Searching for: ${searchInput.value}`);
-    }
-});
-// herosection
-// Dropdown menu functionality
-const dropdowns = document.querySelectorAll('.dropdown');
+const navLinkItems =
+    document.querySelectorAll(
+        ".nav-link:not(.dropdown-toggle)"
+    );
 
-dropdowns.forEach(dropdown => {
-    const toggleBtn = dropdown.querySelector('.dropdown-toggle');
-    
-    toggleBtn.addEventListener('click', (e) => {
+
+navLinkItems.forEach((link) => {
+
+    link.addEventListener("click", (e) => {
+
         e.preventDefault();
-        dropdowns.forEach(item => {
-            if (item !== dropdown) {
-                item.classList.remove('active');
+
+        // Close mobile menu
+        if (
+            navLinks &&
+            navLinks.classList.contains("mobile-active")
+        ) {
+
+            navLinks.classList.remove(
+                "mobile-active"
+            );
+
+            mobileMenuToggle?.classList.remove(
+                "active"
+            );
+
+        }
+
+    });
+
+});
+
+
+// ==========================================
+// CLOSE MOBILE MENU WHEN CLICKING OUTSIDE
+// ==========================================
+
+document.addEventListener("click", (e) => {
+
+    if (
+        navLinks &&
+        mobileMenuToggle &&
+        !navLinks.contains(e.target) &&
+        !mobileMenuToggle.contains(e.target)
+    ) {
+
+        navLinks.classList.remove(
+            "mobile-active"
+        );
+
+        mobileMenuToggle.classList.remove(
+            "active"
+        );
+
+    }
+
+});
+
+
+// ==========================================
+// LOGIN BUTTON
+// ==========================================
+
+const loginButton =
+    document.getElementById("loginBtn");
+
+
+if (loginButton) {
+
+    loginButton.addEventListener("click", (e) => {
+
+        // Agar actual login.html par jana hai
+        // to preventDefault mat karo.
+
+        window.location.href =
+            "login.html";
+
+    });
+
+}
+
+
+// ==========================================
+// SIGNUP BUTTON
+// ==========================================
+
+const signupButton =
+    document.getElementById("signupBtn");
+
+
+if (signupButton) {
+
+    signupButton.addEventListener("click", (e) => {
+
+        // Agar actual signup.html par jana hai
+        // to preventDefault mat karo.
+
+        window.location.href =
+            "signup.html";
+
+    });
+
+}
+
+
+// ==========================================
+// SEARCH
+// ==========================================
+
+const searchInput =
+    document.getElementById("searchInput");
+
+
+if (searchInput) {
+
+    searchInput.addEventListener(
+        "keypress",
+        (e) => {
+
+            if (e.key === "Enter") {
+
+                const searchValue =
+                    searchInput.value.trim();
+
+                if (searchValue !== "") {
+
+                    alert(
+                        `Searching for: ${searchValue}`
+                    );
+
+                }
+
             }
-        });
-        dropdown.classList.toggle('active');
-    });
-});
 
-window.addEventListener('click', (e) => {
-    if (!e.target.closest('.dropdown')) {
-        dropdowns.forEach(dropdown => {
-            dropdown.classList.remove('active');
-        });
-    }
-});
-
-// Mobile menu toggle
-const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-const navLinks = document.getElementById('navLinks');
-
-mobileMenuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('mobile-active');
-});
-
-// Tabs switching functionality
-const tabButtons = document.querySelectorAll('.tab-btn');
-tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        
-        const tabName = button.getAttribute('data-tab');
-        if(tabName === 'about') {
-            alert('Switched to About Tab');
-        } else if(tabName === 'comments') {
-            alert('Switched to Comments (26) Tab');
         }
+    );
+
+}
+
+
+// ==========================================
+// TABS
+// ==========================================
+
+const tabButtons =
+    document.querySelectorAll(".tab-btn");
+
+
+tabButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        // Remove active from all tabs
+        tabButtons.forEach((btn) => {
+
+            btn.classList.remove("active");
+
+        });
+
+        // Add active to clicked tab
+        button.classList.add("active");
+
+
+        const tabName =
+            button.getAttribute("data-tab");
+
+
+        if (tabName === "about") {
+
+            alert(
+                "Switched to About Tab"
+            );
+
+        }
+
+
+        if (tabName === "comments") {
+
+            alert(
+                "Switched to Comments (26) Tab"
+            );
+
+        }
+
     });
+
 });
 
-// Figma button & search actions
-document.getElementById('openFigmaBtn').addEventListener('click', () => {
-    alert('Opening template in Figma editor...');
-});
 
-document.getElementById('loginBtn').addEventListener('click', (e) => {
-    e.preventDefault();
-    alert('Log in popup opened.');
-});
+// ==========================================
+// OPEN IN FIGMA BUTTON
+// ==========================================
 
-document.getElementById('signupBtn').addEventListener('click', (e) => {
-    e.preventDefault();
-    alert('Sign up popup opened.');
-});
+const openFigmaBtn =
+    document.getElementById("openFigmaBtn");
 
-const searchInput = document.getElementById('searchInput');
-searchInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        alert(`Searching for: ${searchInput.value}`);
+
+if (openFigmaBtn) {
+
+    openFigmaBtn.addEventListener(
+        "click",
+        () => {
+
+            alert(
+                "Opening template in Figma editor..."
+            );
+
+        }
+    );
+
+}
+
+
+// ==========================================
+// WINDOW RESIZE
+// ==========================================
+
+window.addEventListener("resize", () => {
+
+    // Desktop par mobile menu close
+    if (window.innerWidth > 900) {
+
+        navLinks?.classList.remove(
+            "mobile-active"
+        );
+
+        mobileMenuToggle?.classList.remove(
+            "active"
+        );
+
+
+        // Dropdowns bhi reset
+        dropdowns.forEach((dropdown) => {
+
+            dropdown.classList.remove(
+                "active"
+            );
+
+        });
+
     }
+
 });
 // section 01
 // Interactive functionality for tags and links
@@ -243,4 +438,142 @@ document.getElementById('fullscreenBtn').addEventListener('click', () => {
     } else {
         document.exitFullscreen();
     }
+});
+// comment section
+// ==========================================
+// COMMENTS SECTION JAVASCRIPT
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const comments = document.querySelectorAll(".comment");
+    const helpButton = document.getElementById("helpButton");
+
+
+    // ==========================================
+    // COMMENT HOVER EFFECT
+    // ==========================================
+
+    comments.forEach((comment) => {
+
+        comment.addEventListener("mouseenter", () => {
+            comment.style.cursor = "default";
+        });
+
+    });
+
+
+    // ==========================================
+    // HELP BUTTON
+    // ==========================================
+
+    helpButton.addEventListener("click", () => {
+
+        alert("Need help? This is the comments section.");
+
+    });
+
+
+    // ==========================================
+    // SIMPLE FADE-IN ANIMATION
+    // ==========================================
+
+    comments.forEach((comment, index) => {
+
+        comment.style.opacity = "0";
+        comment.style.transform = "translateY(5px)";
+
+        setTimeout(() => {
+
+            comment.style.transition =
+                "opacity 0.35s ease, transform 0.35s ease";
+
+            comment.style.opacity = "1";
+            comment.style.transform = "translateY(0)";
+
+        }, index * 80);
+
+    });
+
+});
+
+//footer
+/* =========================================
+   FOOTER JAVASCRIPT
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const footerLinks =
+        document.querySelectorAll(".footer-column a");
+
+    const helpButton =
+        document.getElementById("helpButton");
+
+
+    /* =====================================
+       LINK HOVER
+    ===================================== */
+
+    footerLinks.forEach((link) => {
+
+        link.addEventListener("mouseenter", () => {
+
+            link.style.cursor = "pointer";
+
+        });
+
+    });
+
+
+    /* =====================================
+       HELP BUTTON
+    ===================================== */
+
+    helpButton.addEventListener("click", () => {
+
+        alert(
+            "How can we help you?"
+        );
+
+    });
+
+
+    /* =====================================
+       FOOTER FADE-IN
+    ===================================== */
+
+    const footer =
+        document.querySelector(".footer");
+
+
+    const observer =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        footer.classList.add(
+                            "footer-visible"
+                        );
+
+                        observer.unobserve(
+                            footer
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.1
+            }
+        );
+
+
+    observer.observe(footer);
+
 });

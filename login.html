@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #f2f5fb;
+            color: #1f2937;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .login-page {
+            width: 100%;
+            max-width: 420px;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+            padding: 32px;
+        }
+        .login-header {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+        .login-header h1 {
+            font-size: 28px;
+            margin: 0;
+        }
+        .login-header p {
+            margin: 0;
+            color: #57606a;
+            line-height: 1.6;
+        }
+        .login-form {
+            display: grid;
+            gap: 16px;
+        }
+        .login-form label {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 14px;
+            color: #334155;
+        }
+        .login-form input[type="email"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #d2d6dc;
+            border-radius: 12px;
+            font-size: 15px;
+            background: #f8fafc;
+            color: #111827;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .login-form input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+        }
+        .login-submit {
+            border: none;
+            border-radius: 12px;
+            padding: 14px 16px;
+            background: #2563eb;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .login-submit:hover {
+            background: #1d4ed8;
+        }
+        .form-footer {
+            font-size: 14px;
+            color: #475569;
+            text-align: center;
+            margin-top: 8px;
+        }
+        .form-footer a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .error-message {
+            color: #b91c1c;
+            font-size: 13px;
+        }
+        @media (max-width: 500px) {
+            body {
+                padding: 16px;
+            }
+            .login-page {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-page">
+        <div class="login-header">
+            <div>
+                <span class="figma-icon" style="display:inline-grid; margin-bottom:12px;"><span class="dot red"></span><span class="dot purple"></span><span class="dot blue"></span><span class="dot green"></span><span class="dot orange"></span></span>
+                <h1>Log in</h1>
+            </div>
+            <p>Enter your email and password to access your account.</p>
+        </div>
+
+        <form class="login-form" id="loginForm">
+            <label>
+                Email address
+                <input type="email" id="loginEmail" name="email" placeholder="you@example.com" required>
+            </label>
+            <label>
+                Password
+                <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
+            </label>
+            <div class="error-message" id="loginError" aria-live="polite"></div>
+            <button type="submit" class="login-submit">Sign in</button>
+        </form>
+
+        <div class="form-footer">
+            Don’t have an account? <a href="signup.html">Sign up</a>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const loginError = document.getElementById('loginError');
+
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            loginError.textContent = '';
+
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value;
+
+            if (!email || !email.includes('@')) {
+                loginError.textContent = 'Please enter a valid email address.';
+                return;
+            }
+            if (password.length < 6) {
+                loginError.textContent = 'Password must be at least 6 characters.';
+                return;
+            }
+
+            alert('Login successful!');
+            loginForm.reset();
+        });
+    </script>
+</body>
+</html>
