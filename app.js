@@ -403,3 +403,7 @@ rangeCards.forEach((card) => {
     });
 
 });
+
+
+// card section
+
