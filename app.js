@@ -62,6 +62,25 @@ function formatPrice(value) {
   return `$${value.toFixed(2)}`;
 }
 
+function parsePrice(priceText) {
+  if (!priceText) return 0;
+  const cleaned = priceText.replace(/[Rp$\s]/g, '')
+                           .replace(/\./g, '')
+                           .replace(/,/g, '.');
+  const value = parseFloat(cleaned);
+  return Number.isFinite(value) ? value : 0;
+}
+
+function createProductFromCard(card) {
+  const name = card.querySelector('h3')?.textContent?.trim() || 'Product';
+  const image = card.querySelector('.product-image img')?.src || '';
+  const priceText = card.querySelector('.product-info .price strong')?.textContent || '';
+  const price = parsePrice(priceText);
+  const id = name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+
+  return { id, name, price, image };
+}
+
 function updateCartBadge() {
   const cart = loadCart();
   const total = getCartTotalItems(cart);
@@ -413,6 +432,110 @@ document.addEventListener("DOMContentLoaded", () => {
     const addButtons = document.querySelectorAll(".add-cart");
     const likeButtons = document.querySelectorAll(".like-btn");
     const showMore = document.getElementById("showMore");
+    const productsGrid = document.querySelector(".products-grid");
+
+    const extraProducts = [
+        {
+            name: "Cedar Lounge",
+            description: "Elegant lounge chair",
+            price: "Rp 2.100.000",
+            image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=85",
+            badgeClass: "new",
+            badgeText: "New",
+        },
+        {
+            name: "Oslo Sofa",
+            description: "Nordic style sofa",
+            price: "Rp 3.750.000",
+            image: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=700&q=85",
+            badgeClass: "sale",
+            badgeText: "-25%",
+        },
+        {
+            name: "Willow Table",
+            description: "Round wooden coffee table",
+            price: "Rp 1.050.000",
+            image: "https://tse3.mm.bing.net/th/id/OIP.-wY2EY6m3VWH35y0haR4YwHaHa?r=0&pid=Api&h=220&P=0",
+            badgeClass: "new",
+            badgeText: "New",
+        },
+        {
+            name: "Fable Lamp",
+            description: "Contemporary floor lamp",
+            price: "Rp 720.000",
+            image: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=700&q=85",
+            badgeClass: "sale",
+            badgeText: "-15%",
+        },
+    ];
+
+    function buildProductCardHTML(product) {
+        return `
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}">
+                    ${product.badgeText ? `<span class="badge ${product.badgeClass}">${product.badgeText}</span>` : ''}
+                    <div class="card-overlay">
+                        <button class="add-cart">Add to cart</button>
+                        <div class="card-actions">
+                            <button>
+                                <i class="fa-solid fa-share-nodes"></i>
+                                Share
+                            </button>
+                            <button>
+                                <i class="fa-solid fa-code-compare"></i>
+                                Compare
+                            </button>
+                            <button class="like-btn">
+                                <i class="fa-regular fa-heart"></i>
+                                Like
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <div class="price">
+                        <strong>${product.price}</strong>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    function appendExtraProducts() {
+        if (!productsGrid) return;
+        const fragments = extraProducts.map(buildProductCardHTML).join('');
+        productsGrid.insertAdjacentHTML('beforeend', fragments);
+        const newCards = productsGrid.querySelectorAll('.product-card');
+        const newAddButtons = Array.from(newCards).slice(-extraProducts.length).flatMap(card => Array.from(card.querySelectorAll('.add-cart')));
+        const newLikeButtons = Array.from(newCards).slice(-extraProducts.length).flatMap(card => Array.from(card.querySelectorAll('.like-btn')));
+        newAddButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.stopPropagation();
+                const card = button.closest('.product-card');
+                const product = createProductFromCard(card);
+                addToCart(product);
+                showCartMessage(`${product.name} added to cart`);
+            });
+        });
+        newLikeButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.stopPropagation();
+                const icon = button.querySelector('i');
+                if (icon.classList.contains('fa-regular')) {
+                    icon.classList.remove('fa-regular');
+                    icon.classList.add('fa-solid');
+                    button.classList.add('liked');
+                } else {
+                    icon.classList.remove('fa-solid');
+                    icon.classList.add('fa-regular');
+                    button.classList.remove('liked');
+                }
+            });
+        });
+    }
 
 
     /* =========================
@@ -461,11 +584,11 @@ document.addEventListener("DOMContentLoaded", () => {
             event.stopPropagation();
 
             const card = button.closest(".product-card");
-            const productName =
-                card.querySelector("h3").textContent;
+            const product = createProductFromCard(card);
 
+            addToCart(product);
             showCartMessage(
-                `${productName} added to cart`
+                `${product.name} added to cart`
             );
 
         });
@@ -510,9 +633,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================= */
 
     showMore.addEventListener("click", () => {
-
-        showCartMessage("More products coming soon!");
-
+        appendExtraProducts();
+        showMore.disabled = true;
+        showMore.textContent = "Added";
+        showCartMessage("4 more products added");
     });
 
 
@@ -552,3 +676,335 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+///long card section
+/* =========================================================
+   ROOM INSPIRATION SLIDER
+========================================================= */
+
+const slidesContainer = document.querySelector(".slides");
+const slides = document.querySelectorAll(".slide");
+const nextButton = document.querySelector(".slider-next");
+const dots = document.querySelectorAll(".dot");
+const sliderWindow = document.querySelector(".slider-window");
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+let currentSlide = 0;
+
+let autoSlide;
+
+let isAnimating = false;
+
+
+/* =========================================================
+   GET SLIDE WIDTH
+========================================================= */
+
+function getSlideWidth() {
+
+    const slide = slides[0];
+
+    const slideStyle = window.getComputedStyle(slidesContainer);
+
+    const gap = parseFloat(slideStyle.columnGap) || 0;
+
+    return slide.offsetWidth + gap;
+}
+
+
+/* =========================================================
+   MOVE SLIDER
+========================================================= */
+
+function moveSlider(index) {
+
+    if (isAnimating) return;
+
+    isAnimating = true;
+
+    currentSlide = index;
+
+    const slideWidth = getSlideWidth();
+
+    slidesContainer.style.transform =
+        `translateX(-${currentSlide * slideWidth}px)`;
+
+
+    updateDots();
+
+
+    setTimeout(() => {
+
+        isAnimating = false;
+
+    }, 750);
+}
+
+
+/* =========================================================
+   NEXT SLIDE
+========================================================= */
+
+function nextSlide() {
+
+    let nextIndex = currentSlide + 1;
+
+    /*
+        Last slide ke baad dobara first slide.
+    */
+
+    if (nextIndex >= slides.length) {
+        nextIndex = 0;
+    }
+
+    moveSlider(nextIndex);
+}
+
+
+/* =========================================================
+   UPDATE DOTS
+========================================================= */
+
+function updateDots() {
+
+    dots.forEach((dot, index) => {
+
+        dot.classList.toggle(
+            "active",
+            index === currentSlide
+        );
+
+    });
+}
+
+
+/* =========================================================
+   NEXT BUTTON
+========================================================= */
+
+nextButton.addEventListener("click", () => {
+
+    nextSlide();
+
+    restartAutoSlide();
+
+});
+
+
+/* =========================================================
+   DOT CLICK
+========================================================= */
+
+dots.forEach((dot, index) => {
+
+    dot.addEventListener("click", () => {
+
+        moveSlider(index);
+
+        restartAutoSlide();
+
+    });
+
+});
+
+
+/* =========================================================
+   AUTO SLIDER
+========================================================= */
+
+function startAutoSlide() {
+
+    autoSlide = setInterval(() => {
+
+        nextSlide();
+
+    }, 4500);
+
+}
+
+
+function stopAutoSlide() {
+
+    clearInterval(autoSlide);
+
+}
+
+
+function restartAutoSlide() {
+
+    stopAutoSlide();
+
+    startAutoSlide();
+
+}
+
+
+/* =========================================================
+   PAUSE ON HOVER
+========================================================= */
+
+sliderWindow.addEventListener(
+    "mouseenter",
+    stopAutoSlide
+);
+
+
+sliderWindow.addEventListener(
+    "mouseleave",
+    startAutoSlide
+);
+
+
+/* =========================================================
+   TOUCH / SWIPE SUPPORT
+========================================================= */
+
+let touchStartX = 0;
+
+let touchEndX = 0;
+
+
+sliderWindow.addEventListener(
+    "touchstart",
+    (event) => {
+
+        touchStartX = event.changedTouches[0].screenX;
+
+        stopAutoSlide();
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+sliderWindow.addEventListener(
+    "touchend",
+    (event) => {
+
+        touchEndX = event.changedTouches[0].screenX;
+
+        handleSwipe();
+
+        startAutoSlide();
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+function handleSwipe() {
+
+    const swipeDistance =
+        touchStartX - touchEndX;
+
+
+    /*
+        Left swipe
+    */
+
+    if (swipeDistance > 50) {
+
+        nextSlide();
+
+    }
+
+
+    /*
+        Right swipe
+    */
+
+    if (swipeDistance < -50) {
+
+        let previousSlide = currentSlide - 1;
+
+        if (previousSlide < 0) {
+            previousSlide = slides.length - 1;
+        }
+
+        moveSlider(previousSlide);
+
+    }
+
+}
+
+
+/* =========================================================
+   KEYBOARD SUPPORT
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (event.key === "ArrowRight") {
+
+            nextSlide();
+
+            restartAutoSlide();
+
+        }
+
+
+        if (event.key === "ArrowLeft") {
+
+            let previousSlide = currentSlide - 1;
+
+            if (previousSlide < 0) {
+                previousSlide = slides.length - 1;
+            }
+
+            moveSlider(previousSlide);
+
+            restartAutoSlide();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   WINDOW RESIZE
+========================================================= */
+
+window.addEventListener(
+    "resize",
+    () => {
+
+        const slideWidth = getSlideWidth();
+
+        slidesContainer.style.transition = "none";
+
+        slidesContainer.style.transform =
+            `translateX(-${currentSlide * slideWidth}px)`;
+
+
+        requestAnimationFrame(() => {
+
+            slidesContainer.style.transition =
+                "transform 0.75s cubic-bezier(0.77, 0, 0.18, 1)";
+
+        });
+
+    }
+);
+
+
+/* =========================================================
+   START
+========================================================= */
+
+updateDots();
+
+startAutoSlide();
+
+
+//grid section

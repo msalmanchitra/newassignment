@@ -438,8 +438,8 @@ body {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px 14px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 20px;
 }
 
 
@@ -453,6 +453,7 @@ body {
     overflow: hidden;
     cursor: pointer;
     transition: 0.3s ease;
+    min-height: 420px;
 }
 
 .product-card:hover {
@@ -750,12 +751,12 @@ body {
     }
 
     .products-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
     }
 
     .product-image {
-        height: 190px;
+        height: 220px;
     }
 
     .card-actions {
@@ -779,12 +780,12 @@ body {
 @media (max-width: 700px) {
 
     .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        grid-template-columns: 1fr;
+        gap: 18px;
     }
 
     .product-image {
-        height: 210px;
+        height: 240px;
     }
 
     .products-section h2 {
@@ -903,3 +904,708 @@ body {
         font-size: 12px;
     }
 }
+
+
+/* long card section */
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #333333;
+}
+
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
+.inspiration-section {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 25px 0;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.inspiration-container {
+    width: 100%;
+    max-width: 1440px;
+    min-height: 540px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 38% 62%;
+
+    overflow: hidden;
+
+    background: #faf8f5;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.content-area {
+    min-height: 540px;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: clamp(35px, 7vw, 100px);
+}
+
+.content-inner {
+    max-width: 350px;
+}
+
+
+/* Heading */
+
+.content-inner h1 {
+    font-size: clamp(30px, 3vw, 43px);
+
+    line-height: 1.05;
+
+    font-weight: 700;
+
+    letter-spacing: -1.3px;
+
+    color: #3b3b3b;
+
+    margin-bottom: 18px;
+}
+
+
+/* Paragraph */
+
+.content-inner p {
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color: #777777;
+
+    margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   EXPLORE BUTTON
+========================================================= */
+
+.explore-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 120px;
+    height: 42px;
+
+    padding: 0 20px;
+
+    background: #c58b2a;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.explore-btn:hover {
+    background: #a9721d;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   RIGHT SLIDER AREA
+========================================================= */
+
+.slider-area {
+    min-width: 0;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 0 0 0 0;
+}
+
+
+/* =========================================================
+   SLIDER WINDOW
+========================================================= */
+
+.slider-window {
+    position: relative;
+
+    width: 100%;
+
+    height: 470px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SLIDES TRACK
+========================================================= */
+
+.slides {
+    height: 100%;
+
+    display: flex;
+
+    gap: 12px;
+
+    transform: translateX(0);
+
+    transition:
+        transform 0.75s cubic-bezier(0.77, 0, 0.18, 1);
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   SINGLE SLIDE
+========================================================= */
+
+.slide {
+    position: relative;
+
+    flex: 0 0 330px;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #eeeeee;
+}
+
+
+/* =========================================================
+   SLIDE IMAGE
+========================================================= */
+
+.slide img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.8s ease;
+}
+
+
+/* Slight image zoom */
+
+.slide:hover img {
+    transform: scale(1.025);
+}
+
+
+/* =========================================================
+   IMAGE DARK GRADIENT
+========================================================= */
+
+.slide::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 45%;
+
+    pointer-events: none;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.25),
+        transparent
+    );
+}
+
+
+/* =========================================================
+   WHITE INFO BOX
+========================================================= */
+
+.slide-info {
+    position: absolute;
+
+    z-index: 3;
+
+    left: 13px;
+    right: 13px;
+    bottom: 12px;
+
+    min-height: 105px;
+
+    padding: 13px 15px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    backdrop-filter: blur(5px);
+
+    -webkit-backdrop-filter: blur(5px);
+}
+
+
+/* Number */
+
+.slide-number {
+    display: inline-block;
+
+    font-size: 11px;
+
+    color: #888888;
+}
+
+
+/* Small line */
+
+.slide-line {
+    display: inline-block;
+
+    width: 16px;
+    height: 1px;
+
+    margin: 0 7px 3px;
+
+    background: #aaaaaa;
+}
+
+
+/* Type */
+
+.slide-type {
+    display: inline-block;
+
+    font-size: 11px;
+
+    color: #777777;
+}
+
+
+/* Title */
+
+.slide-info h2 {
+    margin-top: 6px;
+
+    font-size: 20px;
+
+    line-height: 1.15;
+
+    color: #333333;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SMALL ARROW INSIDE CARD
+========================================================= */
+
+.slide-arrow {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    background: #c58b2a;
+
+    color: #ffffff;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        width 0.3s ease;
+}
+
+.slide-arrow:hover {
+    background: #aa731b;
+}
+
+
+/* =========================================================
+   NEXT BUTTON
+========================================================= */
+
+.slider-next {
+    position: absolute;
+
+    z-index: 10;
+
+    top: 50%;
+
+    right: 18px;
+
+    transform: translateY(-50%);
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.13);
+
+    color: #c58b2a;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.slider-next span {
+    font-size: 30px;
+
+    line-height: 1;
+
+    margin-top: -3px;
+}
+
+.slider-next:hover {
+    transform: translateY(-50%) scale(1.08);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+.slider-dots {
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding-left: 15px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #d4d4d4;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.dot.active {
+    width: 13px;
+    height: 13px;
+
+    border: 2px solid #c58b2a;
+
+    background: #ffffff;
+
+    box-shadow:
+        inset 0 0 0 3px #ffffff;
+}
+
+.dot:hover {
+    transform: scale(1.4);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .inspiration-container {
+        grid-template-columns: 40% 60%;
+
+        min-height: 480px;
+    }
+
+    .content-area {
+        min-height: 480px;
+
+        padding-left: 35px;
+    }
+
+    .content-inner h1 {
+        font-size: 30px;
+    }
+
+    .content-inner p {
+        font-size: 12px;
+    }
+
+    .slider-window {
+        height: 420px;
+    }
+
+    .slide {
+        flex-basis: 290px;
+    }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .inspiration-section {
+        padding: 20px 15px;
+    }
+
+    .inspiration-container {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+    }
+
+    .content-area {
+        min-height: 280px;
+
+        padding: 45px 35px;
+
+        align-items: center;
+    }
+
+    .content-inner {
+        max-width: 500px;
+    }
+
+    .content-inner h1 {
+        font-size: 32px;
+    }
+
+    .slider-area {
+        padding-bottom: 5px;
+    }
+
+    .slider-window {
+        height: 430px;
+    }
+
+    .slide {
+        flex-basis: 310px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .inspiration-section {
+        padding: 0;
+    }
+
+    .inspiration-container {
+        width: 100%;
+
+        border-radius: 0;
+    }
+
+    .content-area {
+        min-height: 245px;
+
+        padding: 40px 25px 30px;
+    }
+
+    .content-inner h1 {
+        font-size: 29px;
+
+        letter-spacing: -0.8px;
+    }
+
+    .content-inner p {
+        font-size: 12px;
+
+        margin-bottom: 20px;
+    }
+
+    .desktop-break {
+        display: none;
+    }
+
+    .explore-btn {
+        height: 40px;
+
+        min-width: 115px;
+    }
+
+    .slider-window {
+        height: 400px;
+    }
+
+    .slide {
+        flex-basis: 275px;
+    }
+
+    .slide-info {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .slide-info h2 {
+        font-size: 18px;
+    }
+
+    .slider-next {
+        right: 10px;
+
+        width: 40px;
+        height: 40px;
+    }
+
+    .slider-dots {
+        height: 45px;
+
+        padding-left: 12px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .content-area {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .content-inner h1 {
+        font-size: 27px;
+    }
+
+    .slider-window {
+        height: 370px;
+    }
+
+    .slide {
+        flex-basis: 255px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #c58b2a;
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* grid section */
+
