@@ -1609,3 +1609,584 @@ a:focus-visible {
 
 /* grid section */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    overflow-x: hidden;
+}
+
+.furniture-gallery {
+    width: 100%;
+    min-height: 520px;
+    padding-top: 20px;
+    overflow: hidden;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.gallery-heading {
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.gallery-heading p {
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.gallery-heading h2 {
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #333;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    width: 100%;
+    max-width: 1140px;
+    height: 440px;
+    margin: 22px auto 0;
+    position: relative;
+}
+
+/* All images */
+
+.item {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.08);
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* =========================
+   IMAGE 1
+========================= */
+
+.item-1 {
+    width: 130px;
+    height: 230px;
+    left: 0;
+    top: 0;
+}
+
+/* =========================
+   IMAGE 2
+========================= */
+
+.item-2 {
+    width: 245px;
+    height: 190px;
+    left: 60px;
+    top: 35px;
+}
+
+/* =========================
+   IMAGE 3
+========================= */
+
+.item-3 {
+    width: 205px;
+    height: 245px;
+    left: 330px;
+    top: 70px;
+}
+
+/* =========================
+   IMAGE 4
+========================= */
+
+.item-4 {
+    width: 190px;
+    height: 220px;
+    left: 590px;
+    top: 45px;
+}
+
+/* =========================
+   IMAGE 5
+========================= */
+
+.item-5 {
+    width: 175px;
+    height: 250px;
+    right: 0;
+    top: 20px;
+}
+
+/* =========================
+   IMAGE 6
+========================= */
+
+.item-6 {
+    width: 140px;
+    height: 180px;
+    left: 20px;
+    top: 245px;
+}
+
+/* =========================
+   IMAGE 7
+========================= */
+
+.item-7 {
+    width: 215px;
+    height: 180px;
+    left: 155px;
+    top: 245px;
+}
+
+/* =========================
+   IMAGE 8
+========================= */
+
+.item-8 {
+    width: 175px;
+    height: 180px;
+    left: 500px;
+    top: 250px;
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.item {
+    transition: transform 0.35s ease;
+}
+
+.item:hover {
+    transform: scale(1.025);
+    z-index: 10;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .furniture-gallery {
+        min-height: 650px;
+    }
+
+    .gallery {
+        height: 480px;
+        transform: scale(0.9);
+        transform-origin: top center;
+    }
+
+    .item-1 {
+        left: 0;
+    }
+
+    .item-2 {
+        left: 45px;
+    }
+
+    .item-3 {
+        left: 260px;
+    }
+
+    .item-4 {
+        left: 425px;
+    }
+
+    .item-5 {
+        right: 0;
+    }
+
+    .item-6 {
+        left: 15px;
+    }
+
+    .item-7 {
+        left: 110px;
+    }
+
+    .item-8 {
+        left: 425px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .furniture-gallery {
+        min-height: auto;
+        padding: 20px 12px 30px;
+    }
+
+    .gallery-heading p {
+        font-size: 11px;
+    }
+
+    .gallery-heading h2 {
+        font-size: 19px;
+    }
+
+    .gallery {
+        height: auto;
+        margin-top: 20px;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+
+        position: static;
+        transform: none;
+    }
+
+    .item {
+        position: static;
+        width: 100%;
+        height: 150px;
+    }
+
+    .item-1 {
+        height: 150px;
+    }
+
+    .item-2 {
+        height: 150px;
+    }
+
+    .item-3 {
+        height: 200px;
+    }
+
+    .item-4 {
+        height: 200px;
+    }
+
+    .item-5 {
+        height: 200px;
+    }
+
+    .item-6 {
+        height: 150px;
+    }
+
+    .item-7 {
+        height: 150px;
+    }
+
+    .item-8 {
+        height: 150px;
+    }
+}
+
+/* Small mobile */
+
+@media (max-width: 400px) {
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+    }
+
+    .item {
+        height: 125px;
+    }
+
+    .item-3,
+    .item-4,
+    .item-5 {
+        height: 160px;
+    }
+}
+
+
+/* Footer */
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #e5e5e5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Main footer */
+
+.footer-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 40px 0 35px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.55fr;
+    column-gap: 40px;
+}
+
+/* =========================
+   BRAND
+========================= */
+
+.footer-brand h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+}
+
+.footer-brand p {
+    margin-top: 24px;
+
+    font-size: 12px;
+    line-height: 20px;
+    color: #999;
+}
+
+/* =========================
+   COLUMNS
+========================= */
+
+.footer-column h4,
+.footer-newsletter h4 {
+    margin: 0 0 26px;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column a {
+    width: fit-content;
+
+    margin-bottom: 24px;
+
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    color: #111;
+
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: #777;
+}
+
+/* =========================
+   NEWSLETTER
+========================= */
+
+.newsletter-form {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.newsletter-form input {
+    width: 180px;
+    height: 32px;
+
+    border: none;
+    border-bottom: 1px solid #777;
+    outline: none;
+
+    padding: 0 0 6px;
+
+    font-size: 12px;
+    color: #333;
+
+    background: transparent;
+}
+
+.newsletter-form input::placeholder {
+    color: #999;
+}
+
+.newsletter-form button {
+    height: 32px;
+
+    border: none;
+    border-bottom: 1px solid #111;
+
+    padding: 0 0 6px;
+
+    background: transparent;
+
+    font-size: 12px;
+    font-weight: 600;
+    color: #111;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.newsletter-form button:hover {
+    opacity: 0.55;
+}
+
+/* =========================
+   BOTTOM
+========================= */
+
+.footer-bottom {
+    max-width: 1240px;
+    margin: 0 auto;
+
+    border-top: 1px solid #e5e5e5;
+
+    padding: 22px 0 24px;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    font-size: 12px;
+    color: #111;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .footer-container {
+        padding: 30px 35px 25px;
+
+        grid-template-columns:
+            1.5fr
+            1fr
+            1fr;
+        
+        row-gap: 30px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-newsletter {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        margin: 0 35px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .footer-container {
+        padding: 30px 25px;
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 20px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-brand h2 {
+        font-size: 18px;
+    }
+
+    .footer-brand p {
+        margin-top: 18px;
+        font-size: 10px;
+        line-height: 17px;
+    }
+
+    .footer-column h4,
+    .footer-newsletter h4 {
+        margin-bottom: 20px;
+        font-size: 10px;
+    }
+
+    .footer-column a {
+        font-size: 10px;
+        margin-bottom: 18px;
+    }
+
+    .footer-newsletter {
+        grid-column: 1 / -1;
+    }
+
+    .newsletter-form {
+        max-width: 270px;
+    }
+
+    .newsletter-form input {
+        width: 170px;
+        font-size: 9px;
+    }
+
+    .newsletter-form button {
+        font-size: 8px;
+    }
+
+    .footer-bottom {
+        margin: 0 25px;
+        padding: 18px 0;
+    }
+
+    .footer-bottom p {
+        font-size: 9px;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .footer-bottom {
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+
+    .newsletter-form input {
+        width: 145px;
+    }
+}

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Furniro - Shop</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="shop.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="logo-mark">
+                <i class="fa-solid fa-compass-drafting"></i>
+            </span>
+            <span>Furniro</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#" class="active">Shop</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+
+        <div class="nav-icons">
+
+            <a href="account.html" aria-label="Account">
+                <i class="fa-regular fa-user"></i>
+            </a>
+
+            <a href="#" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+
+            <a href="wishlist.html" aria-label="Wishlist">
+                <i class="fa-regular fa-heart"></i>
+            </a>
+
+            <a href="cart.html" aria-label="Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+
+        </div>
+
+        <!-- Mobile Menu -->
+        <button class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </header>
+
+
+    <!-- ================= MOBILE NAV ================= -->
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+
+    </div>
+
+
+    <!-- ================= SHOP HERO ================= -->
+
+    <section class="shop-hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="shop-title">
+
+            <h1>Shop</h1>
+
+            <div class="breadcrumb">
+                <a href="#">Home</a>
+                <span>›</span>
+                <span>Shop</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FILTER BAR ================= -->
+
+    <section class="filter-section">
+
+        <div class="filter-left">
+
+            <button class="filter-btn">
+                <i class="fa-solid fa-sliders"></i>
+                <span>Filter</span>
+            </button>
+
+            <button class="view-btn active-view">
+                <i class="fa-solid fa-grip"></i>
+            </button>
+
+            <button class="view-btn">
+                <i class="fa-solid fa-table-list"></i>
+            </button>
+
+            <div class="vertical-line"></div>
+
+            <p class="result-text">
+                Showing 1–16 of 32 results
+            </p>
+
+        </div>
+
+
+        <div class="filter-right">
+
+            <div class="show-box">
+
+                <span>Show</span>
+
+                <select>
+                    <option>16</option>
+                    <option>24</option>
+                    <option>32</option>
+                </select>
+
+            </div>
+
+
+            <div class="sort-box">
+
+                <span>Sort by</span>
+
+                <select>
+                    <option>Default</option>
+                    <option>Price</option>
+                    <option>Name</option>
+                </select>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- footer or banner -->
+     <!-- =====================================================
+     YOUR PRODUCT SECTION
+     Yahan aapka existing products section rahega
+===================================================== -->
+
+<section class="shop-products">
+
+    <!-- Aapke existing product cards yahan hain -->
+
+</section>
+
+
+<!-- =====================================================
+     SPACE / NEXT SECTION
+     Hero ke baad direct banner nahi aayega.
+     Is section mein baad mein aap koi bhi content laga sakte ho.
+===================================================== -->
+
+<section class="middle-section">
+
+    <div class="middle-content">
+
+        <h2>Discover Our Collection</h2>
+
+        <p>
+            Explore beautiful furniture designed to make
+            your home comfortable and stylish.
+        </p>
+
+        <a href="#">Explore More</a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BENEFITS BANNER
+===================================================== -->
+
+<section class="benefits">
+
+    <div class="benefit">
+
+        <div class="benefit-icon">
+            <i class="fa-solid fa-trophy"></i>
+        </div>
+
+        <div class="benefit-text">
+            <h3>High Quality</h3>
+            <p>crafted from top materials</p>
+        </div>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <div class="benefit-icon">
+            <i class="fa-regular fa-circle-check"></i>
+        </div>
+
+        <div class="benefit-text">
+            <h3>Warranty Protection</h3>
+            <p>Over 2 years</p>
+        </div>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <div class="benefit-icon">
+            <i class="fa-solid fa-box-open"></i>
+        </div>
+
+        <div class="benefit-text">
+            <h3>Free Shipping</h3>
+            <p>Order over 150 $</p>
+        </div>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <div class="benefit-icon">
+            <i class="fa-solid fa-headset"></i>
+        </div>
+
+        <div class="benefit-text">
+            <h3>24 / 7 Support</h3>
+            <p>Dedicated support</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+
+            <h2>Furniro.</h2>
+
+            <p>
+                400 University Drive Suite 200 Coral<br>
+                Gables,<br>
+                FL 33134 USA
+            </p>
+
+        </div>
+
+
+        <!-- Links -->
+        <div class="footer-column">
+
+            <h4>Links</h4>
+
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+
+        <!-- Help -->
+        <div class="footer-column">
+
+            <h4>Help</h4>
+
+            <a href="#">Payment Options</a>
+            <a href="#">Returns</a>
+            <a href="#">Privacy Policies</a>
+
+        </div>
+
+
+        <!-- Newsletter -->
+        <div class="footer-newsletter">
+
+            <h4>Newsletter</h4>
+
+            <div class="newsletter-form">
+
+                <input
+                    type="email"
+                    placeholder="Enter Your Email Address"
+                >
+
+                <button>
+                    SUBSCRIBE
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Bottom Footer -->
+
+    <div class="footer-bottom">
+
+        <p>
+            2023 funiro. All rights reserved
+        </p>
+
+    </div>
+
+</footer>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>

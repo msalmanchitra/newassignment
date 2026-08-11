@@ -1,0 +1,302 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#fff;color:#333}
+header{border-bottom:1px solid #f1f1f1}
+header .container{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 60px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:24px}
+.logo span{color:#B88E2F}
+nav{flex:1;display:flex;justify-content:center;gap:40px}
+nav a{text-decoration:none;color:#000;font-weight:500}
+.icons{display:flex;gap:20px;cursor:pointer}
+.icons img{width:22px;height:22px;display:block}
+.breadcrumb{background:#F9F1E7;padding:20px 60px;font-size:14px;color:#9F9F9F}
+.breadcrumb a{text-decoration:none;color:#000}
+.container{display:flex;gap:60px;padding:60px}
+.gallery{display:flex;gap:20px}
+.thumbs{display:flex;flex-direction:column;gap:15px}
+.thumbs img{width:80px;height:80px;object-fit:cover;border-radius:8px;background:#F9F1E7;cursor:pointer}
+.main-img{width:420px;height:420px;background:#F9F1E7;border-radius:10px;object-fit:cover}
+.product-info{flex:1}
+.product-info h1{font-size:32px;font-weight:500;margin-bottom:8px}
+.price{font-size:22px;color:#9F9F9F;margin-bottom:15px}
+.stars{display:flex;align-items:center;gap:10px;margin-bottom:15px}
+.stars span{color:#FFC700}
+.review{color:#9F9F9F;font-size:13px;border-left:1px solid #D9D9D9;padding-left:10px}
+.desc{font-size:13px;line-height:1.6;margin:20px 0;color:#555}
+.label{font-size:14px;color:#9F9F9F;margin:15px 0 8px}
+.sizes{display:flex;gap:10px}
+.size{width:35px;height:35px;display:flex;align-items:center;justify-content:center;background:#F9F1E7;border-radius:5px;cursor:pointer;font-size:13px}
+.size.active{background:#B88E2F;color:#fff}
+.colors{display:flex;gap:12px}
+.color{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid transparent}
+.color.active{border:2px solid #000}
+.purple{background:#816DFA}.black{background:#000}.gold{background:#B88E2F}
+.actions{display:flex;gap:15px;margin:25px 0}
+.qty{display:flex;align-items:center;border:1px solid #9F9F9F;border-radius:8px;padding:5px 12px;gap:15px}
+.qty button{background:none;border:none;font-size:18px;cursor:pointer}
+.btn{padding:12px 35px;border:1px solid #000;border-radius:8px;background:#fff;cursor:pointer;font-weight:500;transition:0.3s}
+.btn:hover{background:#000;color:#fff}
+.details{border-top:1px solid #D9D9D9;padding-top:25px;font-size:13px;color:#9F9F9F}
+.details p{margin:8px 0}
+.share{display:flex;align-items:center;gap:15px;margin-top:15px}
+
+/* new section */
+/* =========================================================
+   PRODUCT DESCRIPTION SECTION
+========================================================= */
+
+.product-description-section {
+    width: 100%;
+
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+
+    background: #ffffff;
+
+    padding: 20px 0 27px;
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.description-tabs {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 28px;
+
+    margin-bottom: 16px;
+}
+
+
+.description-tab {
+    border: none;
+
+    background: transparent;
+
+    padding: 0;
+
+    font-size: 10px;
+
+    color: #999999;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+.description-tab:hover {
+    color: #111111;
+}
+
+
+.description-tab.active {
+    color: #111111;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   DESCRIPTION CONTENT
+========================================================= */
+
+.description-content {
+    display: none;
+
+    width: 100%;
+
+    max-width: 548px;
+
+    margin: 0 auto;
+
+    padding: 0 0 13px;
+}
+
+
+.description-content.active {
+    display: block;
+}
+
+
+.description-content p {
+    margin: 0 0 8px;
+
+    font-size: 7px;
+
+    line-height: 11px;
+
+    color: #999999;
+}
+
+
+/* =========================================================
+   DESCRIPTION IMAGES
+========================================================= */
+
+.description-images {
+    width: 100%;
+
+    max-width: 540px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 13px;
+}
+
+
+.description-image {
+    width: 100%;
+
+    height: 151px;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    background: #fbf1e8;
+}
+
+
+.description-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+
+.description-image:hover img {
+    transform: scale(1.025);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .product-description-section {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .description-content {
+        max-width: 700px;
+    }
+
+    .description-images {
+        max-width: 700px;
+    }
+
+    .description-image {
+        height: 190px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .product-description-section {
+        padding: 25px 18px 30px;
+    }
+
+
+    .description-tabs {
+        gap: 20px;
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
+
+        padding-bottom: 5px;
+
+        scrollbar-width: none;
+    }
+
+
+    .description-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .description-tab {
+        flex-shrink: 0;
+
+        font-size: 11px;
+    }
+
+
+    .description-content {
+        max-width: 100%;
+    }
+
+
+    .description-content p {
+        font-size: 9px;
+
+        line-height: 15px;
+    }
+
+
+    .description-images {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .description-image {
+        height: 210px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .product-description-section {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+
+    .description-tabs {
+        gap: 15px;
+    }
+
+
+    .description-tab {
+        font-size: 10px;
+    }
+
+
+    .description-image {
+        height: 180px;
+    }
+
+}

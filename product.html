@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Asgaard Sofa | Furniro</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="product.css">
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <a class="logo" href="index.html">
+      <svg width="40" height="32" viewBox="0 0 40 32" fill="none">
+        <path d="M0 32L20 0L40 32H32L20 12L8 32H0Z" fill="#B88E2F"/>
+        <path d="M10 32L20 16L30 32H26L20 20L14 32H10Z" fill="#B88E2F"/>
+      </svg>
+      <span>Furniro</span>
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="icons">
+      <a href="account.html" aria-label="Account">
+        <img src="https://api.iconify.design/mdi:account-alert-outline.svg" alt="Account">
+      </a>
+      <a href="wishlist.html" aria-label="Wishlist">
+        <img src="https://api.iconify.design/mdi:heart-outline.svg" alt="Wishlist">
+      </a>
+      <a href="cart.html" aria-label="Cart">
+        <img src="https://api.iconify.design/mdi:shopping-cart-outline.svg" alt="Cart">
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <a href="#">Home</a> > <a href="#">Shop</a> > Asgaard sofa
+</div>
+
+<div class="container">
+  <div class="gallery">
+    <div class="thumbs">
+      <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=240&q=80" alt="Modern sofa thumbnail">
+      <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=240&q=80" alt="Bedroom furniture thumbnail">
+      <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=240&q=80" alt="Chair thumbnail">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.I12377IZ_KFq6eyVwFDX_AHaF6?r=0&pid=Api&h=220&P=0" alt="Designer furniture thumbnail">
+    </div>
+    <img class="main-img" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=760&q=80" alt="Modern furniture product">
+  </div>
+
+  <div class="product-info">
+    <h1>Asgaard sofa</h1>
+    <div class="price">Rs. 250,000.00</div>
+    <div class="stars">
+      <span>★★★</span>
+      <div class="review">5 Customer Review</div>
+    </div>
+    
+    <p class="desc">
+      Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.
+    </p>
+
+    <div class="label">Size</div>
+    <div class="sizes">
+      <div class="size active">L</div>
+      <div class="size">XL</div>
+      <div class="size">XS</div>
+    </div>
+
+    <div class="label">Color</div>
+    <div class="colors">
+      <div class="color purple active"></div>
+      <div class="color black"></div>
+      <div class="color gold"></div>
+    </div>
+
+    <div class="actions">
+      <div class="qty">
+        <button onclick="changeQty(-1)">-</button>
+        <span id="qty">1</span>
+        <button onclick="changeQty(1)">+</button>
+      </div>
+      <button class="btn">Add To Cart</button>
+      <button class="btn">+ Compare</button>
+    </div>
+
+    <div class="details">
+      <p>SKU : SS001</p>
+      <p>Category : Sofas</p>
+      <p>Tags : Sofa, Chair, Home, Shop</p>
+      <div class="share">
+        Share :
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- new section -->
+
+<!-- =====================================================
+     PRODUCT DESCRIPTION SECTION
+===================================================== -->
+
+<section class="product-description-section">
+
+    <!-- Tabs -->
+    <div class="description-tabs">
+
+        <button
+            class="description-tab active"
+            data-tab="description"
+        >
+            Description
+        </button>
+
+        <button
+            class="description-tab"
+            data-tab="additional"
+        >
+            Additional Information
+        </button>
+
+        <button
+            class="description-tab"
+            data-tab="reviews"
+        >
+            Reviews [5]
+        </button>
+
+    </div>
+
+
+    <!-- ================= DESCRIPTION ================= -->
+
+    <div
+        class="description-content active"
+        id="description"
+    >
+
+        <p>
+            Embodying the raw, wayward spirit of rock 'n' roll,
+            the Kilburn portable active stereo speaker takes
+            the unmistakable look and sound of Marshall,
+            unplugging the chords, and takes the show on the road.
+        </p>
+
+        <p>
+            Weighing in under 7 pounds, the Kilburn is a
+            lightweight piece of vintage styled engineering.
+            Setting the bar as one of the loudest speakers in
+            its class, the Kilburn is a compact, stout-hearted
+            hero with a well-balanced audio which boasts a clear
+            midrange and extended highs for a sound that is
+            difficult and pronounced.
+        </p>
+
+    </div>
+
+
+    <!-- ================= ADDITIONAL ================= -->
+
+    <div
+        class="description-content"
+        id="additional"
+    >
+
+        <p>
+            Product dimensions, materials and additional
+            product information are provided below.
+        </p>
+
+        <p>
+            Material: Premium quality wood and fabric.
+            Product category: Sofa.
+        </p>
+
+    </div>
+
+
+    <!-- ================= REVIEWS ================= -->
+
+    <div
+        class="description-content"
+        id="reviews"
+    >
+
+        <p>
+            Customer Reviews
+        </p>
+
+        <p>
+            ★★★★★ &nbsp; Excellent product and beautiful
+            finishing. Very comfortable and stylish.
+        </p>
+
+    </div>
+
+
+    <!-- ================= IMAGES ================= -->
+
+    <div class="description-images">
+
+        <div class="description-image">
+
+            <img
+                src="images/sofa-description-1.jpg"
+                alt="Asgaard Sofa"
+            >
+
+        </div>
+
+
+        <div class="description-image">
+
+            <img
+                src="images/sofa-description-2.jpg"
+                alt="Asgaard Sofa"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+    <!-- JavaScript -->
+    <script src="product.js"></script>
+
+</body>
+</html>
