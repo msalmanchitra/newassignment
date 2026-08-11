@@ -407,3 +407,148 @@ rangeCards.forEach((card) => {
 
 // card section
 
+document.addEventListener("DOMContentLoaded", () => {
+
+    const cards = document.querySelectorAll(".product-card");
+    const addButtons = document.querySelectorAll(".add-cart");
+    const likeButtons = document.querySelectorAll(".like-btn");
+    const showMore = document.getElementById("showMore");
+
+
+    /* =========================
+       CARD HOVER / ACTIVE
+    ========================= */
+
+    cards.forEach(card => {
+
+        card.addEventListener("mouseenter", () => {
+
+            cards.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            card.classList.add("active");
+        });
+
+        card.addEventListener("mouseleave", () => {
+
+            /*
+             * Desktop par mouse hatne ke baad
+             * second card active rahega.
+             */
+
+            if (window.innerWidth > 700) {
+
+                cards.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                cards[1].classList.add("active");
+            }
+        });
+
+    });
+
+
+    /* =========================
+       ADD TO CART
+    ========================= */
+
+    addButtons.forEach(button => {
+
+        button.addEventListener("click", (event) => {
+
+            event.stopPropagation();
+
+            const card = button.closest(".product-card");
+            const productName =
+                card.querySelector("h3").textContent;
+
+            showCartMessage(
+                `${productName} added to cart`
+            );
+
+        });
+
+    });
+
+
+    /* =========================
+       LIKE BUTTON
+    ========================= */
+
+    likeButtons.forEach(button => {
+
+        button.addEventListener("click", (event) => {
+
+            event.stopPropagation();
+
+            const icon = button.querySelector("i");
+
+            if (icon.classList.contains("fa-regular")) {
+
+                icon.classList.remove("fa-regular");
+                icon.classList.add("fa-solid");
+
+                button.classList.add("liked");
+
+            } else {
+
+                icon.classList.remove("fa-solid");
+                icon.classList.add("fa-regular");
+
+                button.classList.remove("liked");
+            }
+
+        });
+
+    });
+
+
+    /* =========================
+       SHOW MORE
+    ========================= */
+
+    showMore.addEventListener("click", () => {
+
+        showCartMessage("More products coming soon!");
+
+    });
+
+
+    /* =========================
+       CART MESSAGE
+    ========================= */
+
+    function showCartMessage(message) {
+
+        const oldMessage =
+            document.querySelector(".cart-message");
+
+        if (oldMessage) {
+            oldMessage.remove();
+        }
+
+        const messageBox =
+            document.createElement("div");
+
+        messageBox.className = "cart-message";
+
+        messageBox.textContent = message;
+
+        document.body.appendChild(messageBox);
+
+        setTimeout(() => {
+
+            messageBox.style.opacity = "0";
+            messageBox.style.transform = "translateX(100%)";
+
+            setTimeout(() => {
+                messageBox.remove();
+            }, 300);
+
+        }, 1800);
+
+    }
+
+});
