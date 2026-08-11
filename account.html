@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login / Signup - Furniro</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <a class="logo" href="index.html">
+      <svg width="40" height="32" viewBox="0 0 40 32" fill="none">
+        <path d="M0 32L20 0L40 32H32L20 12L8 32H0Z" fill="#B88E2F"/>
+        <path d="M10 32L20 16L30 32H26L20 20L14 32H10Z" fill="#B88E2F"/>
+      </svg>
+      <span>Furniro</span>
+    </a>
+
+    <nav class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="icons">
+      <a class="icon-link" href="account.html" aria-label="Account">
+        <img src="https://api.iconify.design/mdi:account-alert-outline.svg" alt="Account">
+      </a>
+      <a class="icon-link wishlist-link" href="wishlist.html" aria-label="Wishlist">
+        <img src="https://api.iconify.design/mdi:heart-outline.svg" alt="Wishlist">
+      </a>
+      <a class="icon-link cart-link" href="cart.html" aria-label="Cart">
+        <img src="https://api.iconify.design/mdi:shopping-cart-outline.svg" alt="Cart">
+        <span class="cart-badge" id="cart-count-page">0</span>
+      </a>
+    </div>
+
+    <button class="toggle" id="toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
+  <div>
+</header>
+
+<main class="auth-page">
+  <section class="auth-section">
+    <div class="auth-card">
+      <div class="auth-head">
+        <h1>Welcome Back</h1>
+        <p>Login to your account or create a new account to save favorites and checkout faster.</p>
+      </div>
+
+      <div class="auth-toggle">
+        <button type="button" class="auth-tab active" data-target="login">Login</button>
+        <button type="button" class="auth-tab" data-target="signup">Signup</button>
+      </div>
+
+      <form id="login-form" class="auth-form active">
+        <div class="auth-field">
+          <label for="login-email">Email address</label>
+          <input id="login-email" type="email" placeholder="Email" required />
+        </div>
+        <div class="auth-field">
+          <label for="login-password">Password</label>
+          <input id="login-password" type="password" placeholder="Password" required />
+        </div>
+        <div class="auth-actions">
+          <button class="btn" type="submit">Login</button>
+        </div>
+        <p class="auth-help">Don’t have an account yet? Tap Signup.</p>
+      </form>
+
+      <form id="signup-form" class="auth-form">
+        <div class="auth-field">
+          <label for="signup-name">Full name</label>
+          <input id="signup-name" type="text" placeholder="Full name" required />
+        </div>
+        <div class="auth-field">
+          <label for="signup-email">Email address</label>
+          <input id="signup-email" type="email" placeholder="Email" required />
+        </div>
+        <div class="auth-field">
+          <label for="signup-password">Password</label>
+          <input id="signup-password" type="password" placeholder="Password" required />
+        </div>
+        <div class="auth-field">
+          <label for="signup-confirm">Confirm password</label>
+          <input id="signup-confirm" type="password" placeholder="Confirm password" required />
+        </div>
+        <div class="auth-actions">
+          <button class="btn" type="submit">Create Account</button>
+        </div>
+        <p class="auth-help">Already have an account? Tap Login.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

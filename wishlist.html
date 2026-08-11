@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wishlist - Furniro</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <a class="logo" href="index.html">
+      <svg width="40" height="32" viewBox="0 0 40 32" fill="none">
+        <path d="M0 32L20 0L40 32H32L20 12L8 32H0Z" fill="#B88E2F"/>
+        <path d="M10 32L20 16L30 32H26L20 20L14 32H10Z" fill="#B88E2F"/>
+      </svg>
+      <span>Furniro</span>
+    </a>
+
+    <nav class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="wishlist.html">Wishlist</a>
+    </nav>
+
+    <div class="icons">
+      <a class="icon-link" href="account.html" aria-label="Account">
+        <img src="https://api.iconify.design/mdi:account-alert-outline.svg" alt="Account">
+      </a>
+      <a class="icon-link wishlist-link" href="wishlist.html" aria-label="Wishlist">
+        <img src="https://api.iconify.design/mdi:heart-outline.svg" alt="Wishlist">
+      </a>
+      <a class="icon-link cart-link" href="cart.html" aria-label="Cart">
+        <img src="https://api.iconify.design/mdi:shopping-cart-outline.svg" alt="Cart">
+        <span class="cart-badge" id="cart-count-page">0</span>
+      </a>
+    </div>
+
+    <button class="toggle" id="toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
+  <div>
+</header>
+
+<main class="cart-page">
+  <section class="cart-hero">
+    <div class="cart-hero-box">
+      <h1>Your Wishlist</h1>
+      <p>Saved items are stored here until you're ready to add them to your cart.</p>
+    </div>
+  </section>
+
+  <section class="cart-content container">
+    <div class="cart-table-wrap">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="wishlist-items">
+          <tr class="empty-row">
+            <td colspan="3">Your wishlist is empty. Save products while browsing.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <aside class="cart-summary">
+      <div class="summary-card">
+        <h2>Wishlist Summary</h2>
+        <p id="wishlist-summary">Save your favorite furniture and move items to cart when ready.</p>
+      </div>
+    </aside>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
