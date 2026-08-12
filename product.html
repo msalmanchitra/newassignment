@@ -14,12 +14,13 @@
     >
 
     <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="product.css">
 </head>
 
 <body>
 
-<header>
+<header class="navbar">
   <div class="container">
     <a class="logo" href="index.html">
       <svg width="40" height="32" viewBox="0 0 40 32" fill="none">
@@ -29,7 +30,7 @@
       <span>Furniro</span>
     </a>
 
-    <nav>
+    <nav class="menu" id="menu">
       <a href="index.html">Home</a>
       <a href="shop.html">Shop</a>
       <a href="about.html">About</a>
@@ -37,16 +38,34 @@
     </nav>
 
     <div class="icons">
-      <a href="account.html" aria-label="Account">
+      <a class="icon-link" href="account.html" aria-label="Account">
         <img src="https://api.iconify.design/mdi:account-alert-outline.svg" alt="Account">
       </a>
-      <a href="wishlist.html" aria-label="Wishlist">
+
+      <div class="icon-wrap search-wrap">
+        <button class="icon-btn" type="button" aria-label="Search">
+          <img src="https://api.iconify.design/mdi:magnify.svg" alt="Search">
+        </button>
+        <div class="icon-card search-card">
+          <h4>Search</h4>
+          <form class="search-form">
+            <input type="text" placeholder="Search products..." />
+            <button type="submit">Go</button>
+          </form>
+        </div>
+      </div>
+
+      <a class="icon-link wishlist-link" href="wishlist.html" aria-label="Wishlist">
         <img src="https://api.iconify.design/mdi:heart-outline.svg" alt="Wishlist">
       </a>
-      <a href="cart.html" aria-label="Cart">
+
+      <!-- <a class="icon-link cart-link" href="cart.html" aria-label="Cart">
         <img src="https://api.iconify.design/mdi:shopping-cart-outline.svg" alt="Cart">
+        <span class="cart-badge" id="cart-count-page">0</span>
       </a>
-    </div>
+    </div> -->
+
+    <button class="toggle" id="toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
   </div>
 </header>
 
@@ -114,135 +133,540 @@
     </div>
   </div>
 </div>
+   
+<!-- second section -->
+   <main class="product-section">
 
-<!-- new section -->
+    <!-- TABS -->
+    <div class="tabs" role="tablist">
 
-<!-- =====================================================
-     PRODUCT DESCRIPTION SECTION
-===================================================== -->
+      <button
+        class="tab active"
+        type="button"
+        role="tab"
+        aria-selected="true"
+        data-tab="description"
+      >
+        Description
+      </button>
 
-<section class="product-description-section">
+      <button
+        class="tab"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        data-tab="additional"
+      >
+        Additional Information
+      </button>
 
-    <!-- Tabs -->
-    <div class="description-tabs">
-
-        <button
-            class="description-tab active"
-            data-tab="description"
-        >
-            Description
-        </button>
-
-        <button
-            class="description-tab"
-            data-tab="additional"
-        >
-            Additional Information
-        </button>
-
-        <button
-            class="description-tab"
-            data-tab="reviews"
-        >
-            Reviews [5]
-        </button>
+      <button
+        class="tab"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        data-tab="reviews"
+      >
+        Reviews [5]
+      </button>
 
     </div>
 
 
-    <!-- ================= DESCRIPTION ================= -->
-
-    <div
-        class="description-content active"
-        id="description"
+    <!-- DESCRIPTION -->
+    <section
+      class="tab-panel active"
+      id="description"
+      role="tabpanel"
     >
 
+      <div class="description">
+
         <p>
-            Embodying the raw, wayward spirit of rock 'n' roll,
-            the Kilburn portable active stereo speaker takes
-            the unmistakable look and sound of Marshall,
-            unplugging the chords, and takes the show on the road.
+          Embodying the raw, wayward spirit of rock ’n’ roll, the Kilburn
+          portable active stereo speaker takes the unmistakable look and
+          sound of Marshall, unplugs the chords, and takes the show on the road.
         </p>
 
         <p>
-            Weighing in under 7 pounds, the Kilburn is a
-            lightweight piece of vintage styled engineering.
-            Setting the bar as one of the loudest speakers in
-            its class, the Kilburn is a compact, stout-hearted
-            hero with a well-balanced audio which boasts a clear
-            midrange and extended highs for a sound that is
-            difficult and pronounced.
+          Weighing in under 7 pounds, the Kilburn is a lightweight piece of
+          vintage styled engineering. Setting the bar as one of the loudest
+          speakers in its class, the Kilburn is a compact, stout-hearted hero
+          with a well-balanced audio which boasts a clear midrange and
+          extended highs for a sound that is both articulate and pronounced.
+          The analogue knobs allow you to fine tune the controls to your
+          personal preferences while the guitar-influenced leather strap
+          enables easy and stylish travel.
         </p>
 
-    </div>
+      </div>
 
 
-    <!-- ================= ADDITIONAL ================= -->
+      <!-- IMAGES -->
+      <div class="image-grid">
 
-    <div
-        class="description-content"
-        id="additional"
+        <figure class="product-image">
+          <img
+            src="./images/Group 107.png"
+            alt="Cream sectional sofa"
+          >
+        </figure>
+
+        <figure class="product-image">
+          <img
+            src="./images/Group 106.png"
+            alt="Cream sectional sofa with chaise"
+          >
+        </figure>
+
+      </div>
+
+    </section>
+
+
+    <!-- ADDITIONAL INFORMATION -->
+    <section
+      class="tab-panel"
+      id="additional"
+      role="tabpanel"
+      hidden
     >
 
-        <p>
-            Product dimensions, materials and additional
-            product information are provided below.
-        </p>
+      <div class="placeholder-content">
+
+        <h2>Additional Information</h2>
 
         <p>
-            Material: Premium quality wood and fabric.
-            Product category: Sofa.
+          Premium upholstery, solid construction and a comfortable
+          modern sectional design.
         </p>
 
-    </div>
+      </div>
+
+    </section>
 
 
-    <!-- ================= REVIEWS ================= -->
-
-    <div
-        class="description-content"
-        id="reviews"
+    <!-- REVIEWS -->
+    <section
+      class="tab-panel"
+      id="reviews"
+      role="tabpanel"
+      hidden
     >
 
-        <p>
-            Customer Reviews
-        </p>
+      <div class="placeholder-content">
+
+        <h2>Reviews [5]</h2>
 
         <p>
-            ★★★★★ &nbsp; Excellent product and beautiful
-            finishing. Very comfortable and stylish.
+          Customer reviews are available here.
         </p>
 
-    </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- third section -->
+
+  <!-- =========================================
+         RELATED PRODUCTS
+    ========================================== -->
+
+    <section class="related-products">
+
+        <div class="container">
+
+            <!-- Section Heading -->
+            <h2 class="section-title">
+                Related Products
+            </h2>
 
 
-    <!-- ================= IMAGES ================= -->
+            <!-- =====================================
+                 PRODUCT GRID
+            ====================================== -->
 
-    <div class="description-images">
+            <div class="products-grid" id="productsGrid">
 
-        <div class="description-image">
 
-            <img
-                src="images/sofa-description-1.jpg"
-                alt="Asgaard Sofa"
-            >
+                <!-- ================================
+                     PRODUCT 1
+                ================================= -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1549497538-303791108f95?auto=format&fit=crop&w=700&q=85"
+                            alt="Stylish dining chair"
+                            loading="lazy"
+                        >
+
+                        <span class="product-badge sale">
+                            -30%
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Syltherine
+                        </h3>
+
+                        <p class="product-category">
+                            Stylish cafe chair
+                        </p>
+
+                        <div class="price-row">
+
+                            <span class="current-price">
+                                Rp 2.500.000
+                            </span>
+
+                            <span class="old-price">
+                                Rp 3.500.000
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ================================
+                     PRODUCT 2
+                ================================= -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=700&q=85"
+                            alt="Modern chair"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Leviosa
+                        </h3>
+
+                        <p class="product-category">
+                            Stylish cafe chair
+                        </p>
+
+                        <div class="price-row">
+
+                            <span class="current-price">
+                                Rp 2.500.000
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ================================
+                     PRODUCT 3
+                ================================= -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=700&q=85"
+                            alt="Luxury sofa"
+                            loading="lazy"
+                        >
+
+                        <span class="product-badge sale">
+                            -50%
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Lolito
+                        </h3>
+
+                        <p class="product-category">
+                            Luxury big sofa
+                        </p>
+
+                        <div class="price-row">
+
+                            <span class="current-price">
+                                Rp 7.000.000
+                            </span>
+
+                            <span class="old-price">
+                                Rp 14.000.000
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ================================
+                     PRODUCT 4
+                ================================= -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=700&q=85"
+                            alt="Outdoor table and stool"
+                            loading="lazy"
+                        >
+
+                        <span class="product-badge new">
+                            New
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Respira
+                        </h3>
+
+                        <p class="product-category">
+                            Outdoor bar table and stool
+                        </p>
+
+                        <div class="price-row">
+
+                            <span class="current-price">
+                                Rp 500.000
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================
+                     HIDDEN PRODUCT 5
+                ================================== -->
+
+                <article class="product-card hidden-product">
+
+                    <div class="product-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1550226891-ef816aed4a98?auto=format&fit=crop&w=700&q=85"
+                            alt="Modern furniture"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Grifo
+                        </h3>
+
+                        <p class="product-category">
+                            Modern lounge chair
+                        </p>
+
+                        <div class="price-row">
+
+                            <span class="current-price">
+                                Rp 1.800.000
+                            </span>
+
+                            <span class="old-price">
+                                Rp 2.400.000
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================
+                     HIDDEN PRODUCT 6
+                ================================== -->
+
+                <article class="product-card hidden-product">
+
+                    <div class="product-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=700&q=85"
+                            alt="Modern interior furniture"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Muggo
+                        </h3>
+
+                        <p class="product-category">
+                            Small modern table
+                        </p>
+
+                        <div class="price-row">
+
+                            <span class="current-price">
+                                Rp 1.200.000
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================
+                     HIDDEN PRODUCT 7
+                ================================== -->
+
+                <article class="product-card hidden-product">
+
+                    <div class="product-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=700&q=85"
+                            alt="Modern living room"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Pingky
+                        </h3>
+
+                        <p class="product-category">
+                            Cute modern sofa
+                        </p>
+
+                        <div class="price-row">
+
+                            <span class="current-price">
+                                Rp 3.500.000
+                            </span>
+
+                            <span class="old-price">
+                                Rp 4.500.000
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================
+                     HIDDEN PRODUCT 8
+                ================================== -->
+
+                <article class="product-card hidden-product">
+
+                    <div class="product-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=700&q=85"
+                            alt="Modern room furniture"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Potty
+                        </h3>
+
+                        <p class="product-category">
+                            Minimalist furniture
+                        </p>
+
+                        <div class="price-row">
+
+                            <span class="current-price">
+                                Rp 1.900.000
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- =====================================
+                 SHOW MORE BUTTON
+            ====================================== -->
+
+            <div class="show-more-wrapper">
+
+                <button
+                    class="show-more-btn"
+                    id="showMoreBtn"
+                    type="button"
+                >
+                    Show More
+                </button>
+
+            </div>
 
         </div>
 
+    </section>
 
-        <div class="description-image">
 
-            <img
-                src="images/sofa-description-2.jpg"
-                alt="Asgaard Sofa"
-            >
-
-        </div>
-
-    </div>
-
-</section>
     <!-- JavaScript -->
+    <script src="app.js"></script>
     <script src="product.js"></script>
 
 </body>
