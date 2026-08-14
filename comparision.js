@@ -84,3 +84,302 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 2 section
 
+class ProductComparer {
+  constructor() {
+    this.productList = [
+      { id: 3, name: 'Lolito', price: 'Rs. 7,000,000.00', rating: 4.5, reviews: 89, img: 'https://i.imgur.com/8Km4V3m.png' },
+      { id: 4, name: 'Respira', price: 'Rs. 500,000.00', rating: 4.8, reviews: 56, img: 'https://i.imgur.com/5Qp4s2T.png' },
+      { id: 5, name: 'Grifo', price: 'Rs. 150,000.00', rating: 4.3, reviews: 120, img: 'https://i.imgur.com/8Km4V3m.png' },
+      { id: 6, name: 'Muggo', price: 'Rs. 250,000.00', rating: 4.6, reviews: 200, img: 'https://i.imgur.com/5Qp4s2T.png' }
+    ];
+    this.fillSlot = 1;
+    this.init();
+  }
+
+  init = () => {
+    this.setStarWidths();
+    this.setupDropdown();
+  }
+
+  // Dynamic Star Fill
+  setStarWidths = () => {
+    document.querySelectorAll('.stars').forEach(el => {
+      const rating = parseFloat(el.dataset.rating);
+      el.style.setProperty('--w', `${(rating / 5) * 100}%`);
+    });
+  }
+
+  // Custom Dropdown
+  setupDropdown = () => {
+    const btn = document.getElementById('selectBtn');
+    const options = document.getElementById('selectOptions');
+
+    // Render options
+    this.productList.forEach(p => {
+      const li = document.createElement('li');
+      li.className = 'option-item';
+      li.textContent = p.name;
+      li.onclick = () => this.updateProduct(p);
+      options.appendChild(li);
+    });
+
+    // Toggle
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      options.classList.toggle('show');
+      btn.classList.toggle('active');
+    });
+
+    // Close on outside
+    window.addEventListener('click', () => {
+      options.classList.remove('show');
+      btn.classList.remove('active');
+    });
+  }
+
+  // Update Product Card
+  updateProduct = (product) => {
+    const target = document.querySelector(`.product-card[data-id="${this.fillSlot}"]`);
+    target.querySelector('.img-box img').src = product.img;
+    target.querySelector('.p-title').textContent = product.name;
+    target.querySelector('.p-price').textContent = product.price;
+    target.querySelector('.rate').textContent = product.rating;
+    target.querySelector('.review-count').textContent = `| ${product.reviews} Review`;
+    target.querySelector('.stars').dataset.rating = product.rating;
+    
+    this.setStarWidths();
+    this.toast(`${product.name} added`);
+    this.fillSlot = this.fillSlot === 1 ? 2 : 1;
+  }
+
+  // Pro Toast
+  toast = (msg) => {
+    const t = document.createElement('div');
+    t.textContent = msg;
+    Object.assign(t.style, {
+      position: 'fixed', bottom: '20px', right: '20px', background: 'var(--gold)',
+      color: '#fff', padding: '12px 20px', borderRadius: '8px', zIndex: '9999',
+      fontSize: '14px', opacity: '0', transition: '0.3s'
+    });
+    document.body.appendChild(t);
+    requestAnimationFrame(() => t.style.opacity = '1');
+    setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 300); }, 2000);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => new ProductComparer());
+
+// section 03
+
+
+"use strict";
+
+/**
+ * Product Specification
+ * Professional JavaScript foundation
+ */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const specificationTable =
+        document.querySelector(".specification-table");
+
+    if (!specificationTable) {
+        return;
+    }
+
+    /*
+     * Add a small accessibility enhancement.
+     * The specification table is treated as a
+     * content component rather than a form.
+     */
+
+    specificationTable.setAttribute(
+        "aria-label",
+        "Product specification comparison"
+    );
+
+});
+
+// ...
+
+"use strict";
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const table = document.querySelector(".specification-table");
+
+    if (!table) {
+        return;
+    }
+
+    table.setAttribute(
+        "aria-label",
+        "Product specification comparison table"
+    );
+
+});
+
+// ,,,
+"use strict";
+
+
+/* =========================================
+   DOM ELEMENTS
+========================================= */
+
+const cartButtons = document.querySelectorAll(".add-cart-btn");
+
+const cartNotification =
+    document.getElementById("cartNotification");
+
+const cartMessage =
+    document.getElementById("cartMessage");
+
+
+/* =========================================
+   CART STATE
+========================================= */
+
+let cart = JSON.parse(
+    localStorage.getItem("productCart")
+) || [];
+
+
+/* =========================================
+   SAVE CART
+========================================= */
+
+function saveCart() {
+
+    localStorage.setItem(
+        "productCart",
+        JSON.stringify(cart)
+    );
+}
+
+
+/* =========================================
+   SHOW NOTIFICATION
+========================================= */
+
+function showCartNotification(message) {
+
+    if (!cartNotification || !cartMessage) {
+        return;
+    }
+
+    cartMessage.textContent = message;
+
+    cartNotification.classList.add("show");
+
+    clearTimeout(window.cartNotificationTimer);
+
+    window.cartNotificationTimer = setTimeout(() => {
+
+        cartNotification.classList.remove("show");
+
+    }, 2500);
+}
+
+
+/* =========================================
+   ADD PRODUCT TO CART
+========================================= */
+
+function addToCart(button) {
+
+    const productName =
+        button.dataset.product;
+
+    const productPrice =
+        Number(button.dataset.price);
+
+
+    const product = {
+
+        id: Date.now(),
+
+        name: productName,
+
+        price: productPrice,
+
+        quantity: 1
+
+    };
+
+
+    cart.push(product);
+
+
+    saveCart();
+
+
+    showCartNotification(
+        `${productName} added to cart`
+    );
+
+
+    /* Temporary button feedback */
+
+    const originalText =
+        button.textContent;
+
+    button.textContent = "Added ✓";
+
+    button.disabled = true;
+
+
+    setTimeout(() => {
+
+        button.textContent =
+            originalText;
+
+        button.disabled = false;
+
+    }, 1200);
+}
+
+
+/* =========================================
+   BUTTON EVENTS
+========================================= */
+
+cartButtons.forEach((button) => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            addToCart(button);
+
+        }
+    );
+
+});
+
+
+/* =========================================
+   INITIALIZATION
+========================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        console.log(
+            "Product specification loaded successfully."
+        );
+
+        console.log(
+            `Cart items: ${cart.length}`
+        );
+
+    }
+);
+
+
+
+
+
+
