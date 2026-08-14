@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkout.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a class="logo" href="index.html">
+                <svg width="40" height="32" viewBox="0 0 40 32" fill="none">
+                    <path d="M0 32L20 0L40 32H32L20 12L8 32H0Z" fill="#B88E2F" />
+                    <path d="M10 32L20 16L30 32H26L20 20L14 32H10Z" fill="#B88E2F" />
+                </svg>
+                <span>Furniro</span>
+            </a>
+
+            <nav class="menu" id="menu">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="icons">
+                <a class="icon-link" href="account.html" aria-label="Account">
+                    <img src="https://api.iconify.design/mdi:account-alert-outline.svg" alt="Account">
+                </a>
+
+                <div class="icon-wrap search-wrap">
+                    <button class="icon-btn" type="button" aria-label="Search">
+                        <img src="https://api.iconify.design/mdi:magnify.svg" alt="Search">
+                    </button>
+                    <div class="icon-card search-card">
+                        <h4>Search</h4>
+                        <form class="search-form">
+                            <input type="text" placeholder="Search products..." />
+                            <button type="submit">Go</button>
+                        </form>
+                    </div>
+                </div>
+
+                <a class="icon-link wishlist-link" href="wishlist.html" aria-label="Wishlist">
+                    <img src="https://api.iconify.design/mdi:heart-outline.svg" alt="Wishlist">
+                </a>
+
+                <a class="icon-link cart-link" href="cart.html" aria-label="Cart">
+                    <img src="https://api.iconify.design/mdi:shopping-cart-outline.svg" alt="Cart">
+                    <span class="cart-badge" id="cart-count">0</span>
+                </a>
+            </div>
+
+            <button class="toggle" id="toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+        </div>
+        <div>
+    </header>
+
+
+    <!-- hero section -->
+    <section class="checkout-banner">
+
+        <!-- Background Image -->
+        <div class="checkout-bg"></div>
+
+        <!-- Soft White Corner Effects -->
+        <div class="corner-fade top-left"></div>
+        <div class="corner-fade top-right"></div>
+        <div class="corner-fade bottom-left"></div>
+        <div class="corner-fade bottom-right"></div>
+
+        <!-- Center Content -->
+        <div class="checkout-content">
+
+            <!-- Logo -->
+            <div class="checkout-logo">
+                <span class="logo-line logo-line-one"></span>
+                <span class="logo-line logo-line-two"></span>
+                <span class="logo-line logo-line-three"></span>
+            </div>
+
+            <!-- Heading -->
+            <h1>Checkout</h1>
+
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+
+                <a href="index.html">Home</a>
+
+                <span class="arrow">›</span>
+
+                <span>Checkout</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- checkoutpage  -->
+
+    <main class="checkout-page">
+
+        <div class="checkout-container">
+
+            <!-- =====================================
+                 BILLING DETAILS
+            ====================================== -->
+
+            <section class="billing-section">
+
+                <h1>Billing details</h1>
+
+                <form id="checkoutForm" novalidate>
+
+                    <!-- First + Last Name -->
+                    <div class="name-row">
+
+                        <div class="form-group">
+                            <label for="firstName">
+                                First Name
+                            </label>
+
+                            <input type="text" id="firstName" name="firstName" autocomplete="given-name" required>
+
+                            <small class="error-message"></small>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="lastName">
+                                Last Name
+                            </label>
+
+                            <input type="text" id="lastName" name="lastName" autocomplete="family-name" required>
+
+                            <small class="error-message"></small>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Company -->
+                    <div class="form-group">
+
+                        <label for="company">
+                            Company Name (Optional)
+                        </label>
+
+                        <input type="text" id="company" name="company" autocomplete="organization">
+
+                    </div>
+
+
+                    <!-- Country -->
+                    <div class="form-group">
+
+                        <label for="country">
+                            Country / Region
+                        </label>
+
+                        <div class="select-wrapper">
+
+                            <select id="country" name="country" required>
+                                <option value="">
+                                    Select Country
+                                </option>
+
+                                <option value="sri-lanka">
+                                    Sri Lanka
+                                </option>
+
+                                <option value="pakistan">
+                                    Pakistan
+                                </option>
+
+                                <option value="india">
+                                    India
+                                </option>
+
+                                <option value="uae">
+                                    United Arab Emirates
+                                </option>
+
+                                <option value="saudi-arabia">
+                                    Saudi Arabia
+                                </option>
+                            </select>
+
+                        </div>
+
+                        <small class="error-message"></small>
+
+                    </div>
+
+
+                    <!-- Street Address -->
+                    <div class="form-group">
+
+                        <label for="address">
+                            Street address
+                        </label>
+
+                        <input type="text" id="address" name="address" autocomplete="street-address" required>
+
+                        <small class="error-message"></small>
+
+                    </div>
+
+
+                    <!-- Town -->
+                    <div class="form-group">
+
+                        <label for="city">
+                            Town / City
+                        </label>
+
+                        <input type="text" id="city" name="city" autocomplete="address-level2" required>
+
+                        <small class="error-message"></small>
+
+                    </div>
+                    <!-- ,,, -->
+                    <!-- Province -->
+                    <div class="form-group">
+
+                        <label for="province">
+                            Province
+                        </label>
+
+                        <div class="select-wrapper">
+
+                            <select id="province" name="province" required>
+                                <option value="">
+                                    Western Province
+                                </option>
+
+                                <option value="western">
+                                    Western Province
+                                </option>
+
+                                <option value="central">
+                                    Central Province
+                                </option>
+
+                                <option value="southern">
+                                    Southern Province
+                                </option>
+
+                                <option value="northern">
+                                    Northern Province
+                                </option>
+
+                                <option value="eastern">
+                                    Eastern Province
+                                </option>
+                            </select>
+
+                        </div>
+
+                        <small class="error-message"></small>
+
+                    </div>
+
+
+                    <!-- ZIP Code -->
+                    <div class="form-group">
+
+                        <label for="zipCode">
+                            ZIP code
+                        </label>
+
+                        <input type="text" id="zipCode" name="zipCode" autocomplete="postal-code" inputmode="numeric"
+                            required>
+
+                        <small class="error-message"></small>
+
+                    </div>
+
+
+                    <!-- Phone -->
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone
+                        </label>
+
+                        <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required>
+
+                        <small class="error-message"></small>
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email address
+                        </label>
+
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+
+                        <small class="error-message"></small>
+
+                    </div>
+
+
+                    <!-- Additional Information -->
+                    <div class="form-group additional-info">
+
+                        <label for="additionalInfo">
+                            &nbsp;
+                        </label>
+
+                        <textarea id="additionalInfo" name="additionalInfo"
+                            placeholder="Additional information"></textarea>
+
+                    </div>
+
+
+                </form>
+
+            </section>
+
+
+            <!-- =====================================
+                 ORDER SUMMARY
+            ====================================== -->
+
+            <aside class="order-section">
+
+                <!-- Product Header -->
+                <div class="summary-header">
+
+                    <h2>Product</h2>
+
+                    <h2>Subtotal</h2>
+
+                </div>
+
+
+                <!-- Product -->
+                <div class="product-row">
+
+                    <div class="product-info">
+
+                        <span class="product-name">
+                            Asgaard sofa
+                        </span>
+
+                        <span class="product-quantity">
+                            x 1
+                        </span>
+
+                    </div>
+
+                    <span class="product-price">
+                        Rs. 250,000.00
+                    </span>
+
+                </div>
+
+
+                <!-- Subtotal -->
+                <div class="price-row">
+
+                    <span>Subtotal</span>
+
+                    <span>Rs. 250,000.00</span>
+
+                </div>
+
+
+                <!-- Total -->
+                <div class="total-row">
+
+                    <span>Total</span>
+
+                    <strong>
+                        Rs. 250,000.00
+                    </strong>
+
+                </div>
+
+
+                <!-- Divider -->
+                <div class="divider"></div>
+
+
+                <!-- Payment -->
+                <div class="payment-methods">
+
+                    <label class="payment-option active">
+
+                        <input type="radio" name="payment" value="bank" checked>
+
+                        <span class="radio-circle"></span>
+
+                        <span class="payment-title">
+                            Direct Bank Transfer
+                        </span>
+
+                    </label>
+
+
+                    <p class="payment-description">
+                        Make your payment directly into our bank
+                        account. Please use your Order ID as the
+                        payment reference. Your order will not be
+                        shipped until the funds have cleared in our
+                        account.
+                    </p>
+
+
+                    <label class="payment-option">
+
+                        <input type="radio" name="payment" value="bank-alt">
+
+                        <span class="radio-circle"></span>
+
+                        <span>
+                            Direct Bank Transfer
+                        </span>
+
+                    </label>
+
+
+                    <label class="payment-option">
+
+                        <input type="radio" name="payment" value="cod">
+
+                        <span class="radio-circle"></span>
+
+                        <span>
+                            Cash On Delivery
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Privacy -->
+                <p class="privacy-text">
+                    Your personal data will be used to support your
+                    experience throughout this website, to manage
+                    access to your account, and for other purposes
+                    described in our
+                    <a href="#">privacy policy</a>.
+                </p>
+
+
+                <!-- Order Button -->
+                <button type="submit" form="checkoutForm" class="place-order-btn">
+                    Place order
+                </button>
+
+
+                <!-- Success Message -->
+                <div class="order-message" id="orderMessage" aria-live="polite"></div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <!-- footer -->
+
+     
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+
+        <!-- =================================================
+             TOP FEATURES
+        ================================================== -->
+
+        <section class="footer-features">
+
+            <div class="features-container">
+
+
+                <!-- FEATURE 01 -->
+                <div class="feature-item">
+
+                    <div class="feature-icon">
+
+                        <svg
+                            viewBox="0 0 48 48"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M10 9H38V14C38 22.2843 31.2843 29 23 29C14.7157 29 8 22.2843 8 14V9H10Z"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                            />
+
+                            <path
+                                d="M8 14H3V17C3 23.0751 7.92487 28 14 28"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M40 14H45V17C45 23.0751 40.0751 28 34 28"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M23 29V37"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M16 42H30"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M18 37H28V42H18V37Z"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                            />
+                        </svg>
+
+                    </div>
+
+
+                    <div class="feature-content">
+
+                        <h3>High Quality</h3>
+
+                        <p>crafted from top materials</p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FEATURE 02 -->
+                <div class="feature-item">
+
+                    <div class="feature-icon">
+
+                        <svg
+                            viewBox="0 0 48 48"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M24 4L29.2 7.1L35.2 7.8L38.8 12.7L43.7 16.3L44.4 22.3L47.5 27.5L44.4 32.7L43.7 38.7L38.8 42.3L35.2 47.2L29.2 47.9L24 51L18.8 47.9L12.8 47.2L9.2 42.3L4.3 38.7L3.6 32.7L0.5 27.5L3.6 22.3L4.3 16.3L9.2 12.7L12.8 7.8L18.8 7.1L24 4Z"
+                                transform="translate(0 -3)"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linejoin="round"
+                            />
+
+                            <path
+                                d="M14 25L21 32L35 17"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+
+                    </div>
+
+
+                    <div class="feature-content">
+
+                        <h3>Warranty Protection</h3>
+
+                        <p>Over 2 years</p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FEATURE 03 -->
+                <div class="feature-item">
+
+                    <div class="feature-icon">
+
+                        <svg
+                            viewBox="0 0 48 48"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M5 12H31V31H5V12Z"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                            />
+
+                            <path
+                                d="M31 18H38L43 24V31H31V18Z"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                                stroke-linejoin="round"
+                            />
+
+                            <circle
+                                cx="12"
+                                cy="35"
+                                r="4"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                            />
+
+                            <circle
+                                cx="36"
+                                cy="35"
+                                r="4"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                            />
+
+                            <path
+                                d="M5 17H31"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            />
+
+                            <path
+                                d="M12 12V17"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            />
+
+                            <path
+                                d="M20 12V17"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            />
+
+                            <path
+                                d="M28 12V17"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            />
+                        </svg>
+
+                    </div>
+
+
+                    <div class="feature-content">
+
+                        <h3>Free Shipping</h3>
+
+                        <p>Order over 150 $</p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FEATURE 04 -->
+                <div class="feature-item">
+
+                    <div class="feature-icon">
+
+                        <svg
+                            viewBox="0 0 48 48"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M15 23C15 14.7157 19.0294 8 24 8C28.9706 8 33 14.7157 33 23V27C33 35.2843 28.9706 40 24 40C19.0294 40 15 35.2843 15 27V23Z"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                            />
+
+                            <path
+                                d="M15 20H11C8.79086 20 7 21.7909 7 24V31C7 33.2091 8.79086 35 11 35H15"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                            />
+
+                            <path
+                                d="M33 20H37C39.2091 20 41 21.7909 41 24V31C41 33.2091 39.2091 35 37 35H33"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                            />
+
+                            <path
+                                d="M24 40V44H31"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M11 17C13 9 18 5 24 5C30 5 35 9 37 17"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+
+                    </div>
+
+
+                    <div class="feature-content">
+
+                        <h3>24 / 7 Support</h3>
+
+                        <p>Dedicated support</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MAIN FOOTER
+        ================================================== -->
+
+        <section class="footer-main">
+
+            <div class="footer-container">
+
+
+                <!-- BRAND -->
+                <div class="footer-brand">
+
+                    <h2>Funiro.</h2>
+
+                    <address>
+                        400 University Drive Suite 200 Coral
+                        Gables,<br>
+                        FL 33134 USA
+                    </address>
+
+                </div>
+
+
+
+                <!-- LINKS -->
+                <div class="footer-column">
+
+                    <h4>Links</h4>
+
+                    <nav class="footer-nav">
+
+                        <a href="#">Home</a>
+
+                        <a href="#">Shop</a>
+
+                        <a href="#">About</a>
+
+                        <a href="#">Contact</a>
+
+                    </nav>
+
+                </div>
+
+
+
+                <!-- HELP -->
+                <div class="footer-column">
+
+                    <h4>Help</h4>
+
+                    <nav class="footer-nav">
+
+                        <a href="#">Payment Options</a>
+
+                        <a href="#">Returns</a>
+
+                        <a href="#">Privacy Policies</a>
+
+                    </nav>
+
+                </div>
+
+
+
+                <!-- NEWSLETTER -->
+                <div class="footer-column newsletter">
+
+                    <h4>Newsletter</h4>
+
+                    <form
+                        class="newsletter-form"
+                        id="newsletterForm"
+                    >
+
+                        <input
+                            type="email"
+                            id="emailInput"
+                            placeholder="Enter Your Email Address"
+                            aria-label="Email Address"
+                            required
+                        >
+
+                        <button type="submit">
+                            SUBSCRIBE
+                        </button>
+
+                    </form>
+
+                    <span
+                        class="newsletter-message"
+                        id="newsletterMessage"
+                    ></span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 COPYRIGHT
+            ================================================== -->
+
+            <div class="footer-bottom">
+
+                <div class="footer-bottom-inner">
+
+                    <p>
+                        2026 funiro. All rights reserved
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </footer>
+</body>
+</html>

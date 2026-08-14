@@ -1,0 +1,910 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-width: 320px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #ffffff;
+    color: #111111;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.contact-page {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #ffffff;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
+.contact-section {
+    width: 100%;
+    max-width: 100%;
+
+    padding:
+        52px
+        20px
+        31px;
+
+    border-top: 1px solid #e8e8e8;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.contact-heading {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.contact-heading h1 {
+    margin: 0;
+
+    font-size: 20px;
+    line-height: 26px;
+
+    font-weight: 700;
+
+    color: #111111;
+}
+
+.contact-heading p {
+    margin-top: 7px;
+
+    font-size: 9px;
+    line-height: 14px;
+
+    font-weight: 400;
+
+    color: #a4a4a4;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.contact-container {
+    width: 100%;
+    max-width: 740px;
+
+    margin: 63px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 180px)
+        minmax(0, 265px);
+
+    column-gap: 82px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   LEFT INFORMATION
+========================================================= */
+
+.contact-info {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 21px;
+}
+
+.info-item {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 22px minmax(0, 1fr);
+
+    column-gap: 10px;
+
+    align-items: start;
+}
+
+.info-icon {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.info-icon svg {
+    width: 19px;
+    height: 19px;
+
+    display: block;
+
+    fill: none;
+
+    stroke: #050505;
+
+    stroke-width: 2;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.info-content {
+    min-width: 0;
+}
+
+.info-content h2 {
+    margin: 0 0 4px;
+
+    font-size: 19px;
+    line-height: 19px;
+
+    font-weight: 500;
+
+    color: #111111;
+}
+
+.info-content p {
+    margin: 0;
+
+    font-size: 11px;
+    line-height: 19px;
+
+    font-weight: 500;
+
+    color: #111111;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+.contact-form-wrapper {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+    width: 100%;
+
+    margin-bottom: 17px;
+}
+
+.form-group label {
+    display: block;
+
+    width: 100%;
+
+    margin-bottom: 8px;
+
+    font-size: 11px;
+    line-height: 16px;
+   margin-bottom: 9px;
+    font-weight: 500;
+
+    color: #111111;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.form-group input,
+.form-group textarea {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    border: 1px solid #bdbdbd;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 11px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group input {
+    height: 38px;
+
+    padding:
+        0
+        14px;
+}
+
+.form-group textarea {
+    height: 48px;
+  padding: 0 16px;
+  font-size: 11px;
+    resize: vertical;
+
+    min-height: 61px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #b1b1b1;
+
+    opacity: 1;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #777777;
+
+    box-shadow:
+        0 0 0 2px rgba(0, 0, 0, 0.035);
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error-message {
+    display: block;
+
+    min-height: 0;
+
+    margin-top: 4px;
+
+    font-size: 8px;
+    line-height: 11px;
+
+    color: #c40000;
+}
+
+.form-group.has-error input,
+.form-group.has-error textarea {
+    border-color: #c40000;
+}
+
+
+/* =========================================================
+   MESSAGE GROUP
+========================================================= */
+
+.message-group {
+    margin-bottom: 20px;
+}
+
+.message-group {
+    margin-bottom: 24px;
+}
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.submit-btn {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 120px;
+    height: 36px;
+
+    margin: 0 0 0 3px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 3px;
+
+    outline: none;
+
+    background: #c99126;
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 11px;
+    font-weight: 400;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease;
+}
+
+.submit-btn:hover {
+    background: #ad791b;
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.12);
+
+    transform: translateY(-1px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+.button-loader {
+    display: none;
+
+    width: 10px;
+    height: 10px;
+
+    margin-left: 7px;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    border-top-color: #ffffff;
+
+    border-radius: 50%;
+
+    animation:
+        buttonSpin 0.7s linear infinite;
+}
+
+.submit-btn.loading .button-loader {
+    display: block;
+}
+
+@keyframes buttonSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   FORM STATUS
+========================================================= */
+
+.form-status {
+    width: 100%;
+
+    margin-top: 10px;
+
+    font-size: 9px;
+    line-height: 14px;
+
+    font-weight: 500;
+
+    text-align: left;
+}
+
+.form-status.success {
+    color: #26833b;
+}
+
+.form-status.error {
+    color: #c40000;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1440px) {
+
+    .contact-section {
+        padding-top: 55px;
+    }
+
+    .contact-heading h1 {
+        font-size: 21px;
+    }
+
+    .contact-container {
+        max-width: 740px;
+
+        grid-template-columns:
+            minmax(0, 185px)
+            minmax(0, 275px);
+
+        column-gap: 85px;
+
+        margin-top: 66px;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+
+    .contact-container {
+        max-width: 720px;
+
+        column-gap: 75px;
+    }
+}
+
+
+/* =========================================================
+   TABLET LANDSCAPE
+========================================================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .contact-section {
+        padding:
+            50px
+            25px
+            40px;
+    }
+
+    .contact-container {
+        max-width: 680px;
+
+        grid-template-columns:
+            minmax(0, 180px)
+            minmax(0, 270px);
+
+        column-gap: 55px;
+
+        margin-top: 55px;
+    }
+}
+
+
+/* =========================================================
+   TABLET PORTRAIT
+========================================================= */
+
+@media (min-width: 601px) and (max-width: 768px) {
+
+    .contact-section {
+        padding:
+            45px
+            30px
+            40px;
+    }
+
+    .contact-container {
+        max-width: 570px;
+
+        grid-template-columns:
+            minmax(0, 160px)
+            minmax(0, 1fr);
+
+        column-gap: 40px;
+
+        margin-top: 50px;
+    }
+
+    .contact-heading h1 {
+        font-size: 20px;
+    }
+
+    .contact-heading p {
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .contact-section {
+        padding:
+            40px
+            18px
+            35px;
+    }
+
+    .contact-heading {
+        max-width: 450px;
+    }
+
+    .contact-heading h1 {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .contact-heading p {
+        margin-top: 8px;
+
+        font-size: 9px;
+        line-height: 14px;
+    }
+
+    .desktop-break {
+        display: none;
+    }
+
+
+    /* CONTENT STACK */
+
+    .contact-container {
+        width: 100%;
+        max-width: 450px;
+
+        margin-top: 42px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 43px;
+    }
+
+
+    /* LEFT INFO */
+
+    .contact-info {
+        width: 100%;
+
+        gap: 24px;
+    }
+
+    .info-item {
+        grid-template-columns:
+            24px
+            minmax(0, 1fr);
+
+        column-gap: 10px;
+    }
+
+    .info-content h2 {
+        font-size: 13px;
+    }
+
+    .info-content p {
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+
+    /* FORM */
+
+    .contact-form-wrapper {
+        width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group input {
+        height: 46px;
+
+        font-size: 11px;
+    }
+
+    .form-group textarea {
+        height: 100px;
+
+        min-height: 100px;
+
+        font-size: 11px;
+    }
+
+    .form-group label {
+        font-size: 10px;
+
+        margin-bottom: 8px;
+    }
+
+    .message-group {
+        margin-bottom: 23px;
+    }
+
+
+    /* BUTTON */
+
+    .submit-btn {
+        width: 120px;
+        height: 35px;
+
+        margin-left: 0;
+
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 375px) {
+
+    .contact-section {
+        padding:
+            34px
+            14px
+            30px;
+    }
+
+    .contact-heading h1 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .contact-heading p {
+        font-size: 8.5px;
+        line-height: 13px;
+    }
+
+    .contact-container {
+        margin-top: 36px;
+
+        gap: 38px;
+    }
+
+    .contact-info {
+        gap: 22px;
+    }
+
+    .info-content h2 {
+        font-size: 12px;
+    }
+
+    .info-content p {
+        font-size: 9px;
+        line-height: 13px;
+    }
+
+    .form-group input {
+        height: 44px;
+
+        padding-left: 13px;
+        padding-right: 13px;
+
+        font-size: 10px;
+    }
+
+    .form-group textarea {
+        height: 90px;
+
+        min-height: 90px;
+
+        padding:
+            12px
+            13px;
+
+        font-size: 10px;
+    }
+
+    .form-group label {
+        font-size: 9px;
+    }
+
+    .submit-btn {
+        width: 115px;
+        height: 34px;
+
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 320px) {
+
+    .contact-section {
+        padding:
+            30px
+            12px
+            28px;
+    }
+
+    .contact-heading h1 {
+        font-size: 17px;
+    }
+
+    .contact-heading p {
+        font-size: 8px;
+    }
+
+    .contact-container {
+        margin-top: 32px;
+
+        gap: 34px;
+    }
+
+    .info-item {
+        grid-template-columns:
+            21px
+            minmax(0, 1fr);
+
+        column-gap: 8px;
+    }
+
+    .info-icon {
+        width: 21px;
+        height: 21px;
+    }
+
+    .info-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .info-content h2 {
+        font-size: 11px;
+    }
+
+    .info-content p {
+        font-size: 8.5px;
+        line-height: 12px;
+    }
+
+    .form-group input {
+        height: 42px;
+    }
+
+    .form-group textarea {
+        height: 85px;
+
+        min-height: 85px;
+    }
+
+    .submit-btn {
+        width: 110px;
+        height: 33px;
+    }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .submit-btn:hover {
+        background: #c99126;
+
+        box-shadow: none;
+
+        transform: none;
+    }
+
+    .submit-btn:active {
+        background: #ad791b;
+
+        transform: scale(0.98);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE SAFETY
+========================================================= */
+
+img,
+svg,
+video,
+iframe {
+    max-width: 100%;
+}
+
+input,
+textarea,
+button {
+    max-width: 100%;
+}
+
+/* banner */
+
+/* =========================================
+   SHOP HERO
+========================================= */
+
+.shop-hero {
+    width: 100%;
+    height: 220px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background-image: url(
+        "https://www.shutterstock.com/image-photo/contact-us-telephone-envelope-letter-600nw-2369194627.jpg"
+    );
+
+    background-size: cover;
+    background-position: center 48%;
+}

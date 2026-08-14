@@ -1,0 +1,19 @@
+.blog-hero {
+    width: 100%;
+    height: 220px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background-image: url(
+        "https://tse3.mm.bing.net/th/id/OIP.fIOFFZzP34mZi8hqy-V29wAAAA?r=0&pid=Api&h=220&P=0"
+    );
+
+    background-size: cover;
+    background-position: center 48%;
+}

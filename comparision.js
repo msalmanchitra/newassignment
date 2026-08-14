@@ -101,7 +101,6 @@ class ProductComparer {
     this.setupDropdown();
   }
 
-  // Dynamic Star Fill
   setStarWidths = () => {
     document.querySelectorAll('.stars').forEach(el => {
       const rating = parseFloat(el.dataset.rating);
@@ -109,7 +108,7 @@ class ProductComparer {
     });
   }
 
-  // Custom Dropdown
+  
   setupDropdown = () => {
     const btn = document.getElementById('selectBtn');
     const options = document.getElementById('selectOptions');
@@ -152,7 +151,7 @@ class ProductComparer {
     this.fillSlot = this.fillSlot === 1 ? 2 : 1;
   }
 
-  // Pro Toast
+  
   toast = (msg) => {
     const t = document.createElement('div');
     t.textContent = msg;
@@ -167,9 +166,9 @@ class ProductComparer {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => new ProductComparer());
+// document.addEventListener('DOMContentLoaded', () => new ProductComparer());
 
-// section 03
+// // section 03
 
 
 "use strict";
@@ -199,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Product specification comparison"
     );
 
-});
+// });
 
 // ...
 
@@ -345,41 +344,41 @@ function addToCart(button) {
    BUTTON EVENTS
 ========================================= */
 
-cartButtons.forEach((button) => {
+// cartButtons.forEach((button) => {
 
-    button.addEventListener(
-        "click",
-        () => {
+//     button.addEventListener(
+//         "click",
+//         () => {
 
-            addToCart(button);
+//             addToCart(button);
 
-        }
-    );
+//         }
+//     );
+
+// });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const cartButtons = document.querySelectorAll(".cart-btn");
+
+    cartButtons.forEach((button) => {
+
+        button.addEventListener("click", () => {
+
+            const originalText = button.textContent;
+
+            button.textContent = "Added ✓";
+
+            button.style.backgroundColor = "#777";
+
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.backgroundColor = "";
+            }, 1200);
+
+        });
+
+    });
 
 });
-
-
-/* =========================================
-   INITIALIZATION
-========================================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
-
-        console.log(
-            "Product specification loaded successfully."
-        );
-
-        console.log(
-            `Cart items: ${cart.length}`
-        );
-
-    }
-);
-
-
-
-
-
-

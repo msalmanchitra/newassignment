@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cart - Furniro</title>
+<title>Furniro</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="contact.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -24,19 +25,33 @@
       <a href="shop.html">Shop</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="cart.html">Cart</a>
     </nav>
 
     <div class="icons">
       <a class="icon-link" href="account.html" aria-label="Account">
         <img src="https://api.iconify.design/mdi:account-alert-outline.svg" alt="Account">
       </a>
+
+      <div class="icon-wrap search-wrap">
+        <button class="icon-btn" type="button" aria-label="Search">
+          <img src="https://api.iconify.design/mdi:magnify.svg" alt="Search">
+        </button>
+        <div class="icon-card search-card">
+          <h4>Search</h4>
+          <form class="search-form">
+            <input type="text" placeholder="Search products..." />
+            <button type="submit">Go</button>
+          </form>
+        </div>
+      </div>
+
       <a class="icon-link wishlist-link" href="wishlist.html" aria-label="Wishlist">
-        <img src="https://api.iconify.design/mdi:heart-outline.svg" alt="Wishlist"> 
+        <img src="https://api.iconify.design/mdi:heart-outline.svg" alt="Wishlist">
       </a>
+
       <a class="icon-link cart-link" href="cart.html" aria-label="Cart">
         <img src="https://api.iconify.design/mdi:shopping-cart-outline.svg" alt="Cart">
-        <span class="cart-badge" id="cart-count-page">0</span>
+        <span class="cart-badge" id="cart-count">0</span>
       </a>
     </div>
 
@@ -44,59 +59,303 @@
   </div>
   <div>
 </header>
+<!-- /// --> 
 
-<main class="cart-page">
-  <section class="cart-hero">
-    <div class="cart-hero-box">
-      <h1>Your Shopping Cart</h1>
-      <p>Review items, update quantities, and proceed to checkout.</p>
-    </div>
-  </section>
 
-  <section class="cart-content container">
-    <div class="cart-table-wrap">
-      <table class="cart-table">
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Qty</th>
-            <th>Price</th>
-            <th>Total</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="cart-items">
-          <tr class="empty-row">
-            <td colspan="5">Your cart is empty. Add items from the shop.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<section class="shop-hero">
 
-    <aside class="cart-summary">
-      <div class="summary-card">
-        <h2>Order Summary</h2>
-        <div class="summary-line">
-          <span>Subtotal</span>
-          <span id="cart-subtotal">$0.00</span>
+        <div class="hero-overlay"></div>
+
+        <div class="shop-title">
+
+            <h1>Contact</h1>
+
+            <div class="breadcrumb">
+                <a href="#">Home</a>
+                <span>›</span>
+                <span>Contact</span>
+            </div>
+
         </div>
-        <div class="summary-line">
-          <span>Shipping</span>
-          <span id="cart-shipping">$10.00</span>
-        </div>
-        <div class="summary-total">
-          <span>Total</span>
-          <span id="cart-total">$10.00</span>
-        </div>
-        <button class="btn checkout-btn" type="button">Proceed to Checkout</button>
-      </div>
-    </aside>
-  </section>
-</main>
+
+    </section>
+<!-- hero section -->
 
 
-<!-- FOOTER -->
-  <!-- =====================================================
+    <main class="contact-page">
+
+        <!-- =========================================
+             CONTACT HEADER
+        ========================================== -->
+
+        <section class="contact-section">
+
+            <div class="contact-heading">
+
+                <h1>Get In Touch With Us</h1>
+
+                <p>
+                    For More Information About Our Product &amp; Services.
+                    Please Feel Free To Drop Us<br class="desktop-break">
+                    An Email. Our Staff Always Be There To Help You Out.
+                    Do Not Hesitate!
+                </p>
+
+            </div>
+
+
+            <!-- =====================================
+                 CONTACT CONTENT
+            ====================================== -->
+
+            <div class="contact-container">
+
+
+                <!-- =================================
+                     LEFT INFORMATION
+                ================================== -->
+
+                <div class="contact-info">
+
+
+                    <!-- ADDRESS -->
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z"
+                                />
+
+                                <circle
+                                    cx="12"
+                                    cy="9"
+                                    r="2.3"
+                                />
+                            </svg>
+
+                        </div>
+
+                        <div class="info-content">
+
+                            <h2>Address</h2>
+
+                            <p>
+                                236 5th SE Avenue, New<br>
+                                York NY10000, United<br>
+                                States
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHONE -->
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M6.6 3.8 9.3 3c.6-.2 1.2.1 1.5.7l1.2 2.8c.2.5.1 1-.3 1.4L10 9.5a14.6 14.6 0 0 0 4.5 4.5l1.6-1.7c.4-.4.9-.5 1.4-.3l2.8 1.2c.6.3.9.9.7 1.5l-.8 2.7c-.2.7-.8 1.1-1.5 1.1C10.5 18.5 5.5 13.5 5.5 7.3c0-.7.4-1.3 1.1-1.5Z"
+                                />
+                            </svg>
+
+                        </div>
+
+                        <div class="info-content">
+
+                            <h2>Phone</h2>
+
+                            <p>
+                                Mobile: (+84) 546-6789<br>
+                                Hotline: (+84) 456-6789
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- WORKING TIME -->
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <circle
+                                    cx="12"
+                                    cy="12"
+                                    r="8.5"
+                                />
+
+                                <path
+                                    d="M12 7v5l3 2"
+                                />
+                            </svg>
+
+                        </div>
+
+                        <div class="info-content">
+
+                            <h2>Working Time</h2>
+
+                            <p>
+                                Monday-Friday: 9:00 -<br>
+                                22:00<br>
+                                Saturday-Sunday: 9:00 -<br>
+                                21:00
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     RIGHT CONTACT FORM
+                ================================== -->
+
+                <div class="contact-form-wrapper">
+
+                    <form
+                        id="contactForm"
+                        class="contact-form"
+                        novalidate
+                    >
+
+
+                        <!-- NAME -->
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Your name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your name..."
+                                autocomplete="name"
+                            >
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your gmail....."
+                                autocomplete="email"
+                            >
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+                        <!-- SUBJECT -->
+
+                        <div class="form-group">
+
+                            <label for="subject">
+                                Subject
+                            </label>
+
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                placeholder="This is an optional"
+                            >
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+                        <!-- MESSAGE -->
+
+                        <div class="form-group message-group">
+
+                            <label for="message">
+                                Message
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Hi! I'd like to ask about"
+                            ></textarea>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+                        <!-- SUBMIT -->
+
+                        <button
+                            type="submit"
+                            class="submit-btn"
+                            id="submitBtn"
+                        >
+                            <span class="button-text">Submit</span>
+                            <span class="button-loader"></span>
+                        </button>
+
+
+                        <!-- SUCCESS MESSAGE -->
+
+                        <p
+                            class="form-status"
+                            id="formStatus"
+                            aria-live="polite"
+                        ></p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- footer --> 
+     
+
+    <!-- =====================================================
          FOOTER
     ====================================================== -->
 
@@ -479,6 +738,4 @@
 
     </footer>
 
-<script src="app.js"></script>
-</body>
-</html>
+     <script src="contact.js"></script>
