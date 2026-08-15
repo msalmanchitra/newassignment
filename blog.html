@@ -7,6 +7,20 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="blog.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    >
 </head>
 <body>
 
@@ -59,22 +73,191 @@
   </div>
   <div>
 </header>
- <!-- hero banner -->
 
-   <section class="blog-hero">
+<!-- banner -->
+
+
+
+    <!-- =========================
+         BLOG HERO / BANNER
+    ========================== -->
+    <header class="blog-hero">
 
         <div class="hero-overlay"></div>
 
-        <div class="blog-title">
+        <div class="hero-content">
 
+            <!-- Font Awesome Logo -->
+            <a href="index.html" class="brand-logo" aria-label="Home">
+                <i class="fa-brands fa-artstation"></i>
+            </a>
+
+            <!-- Page Title -->
             <h1>Blog</h1>
 
-            <div class="breadcrumb">
-                <a href="#">Home</a>
-                <span>›</span>
-                <span>Blog</span>
-            </div>
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+
+                <a href="index.html" class="home-link">
+                    Home
+                </a>
+
+                <span class="breadcrumb-arrow">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </span>
+
+                <span class="current-page">
+                    Blog
+                </span>
+
+            </nav>
 
         </div>
 
-    </section>
+    </header>
+
+
+        <!-- hero  -->
+
+
+      <div class="page-wrapper">
+
+        <!-- ========== MAIN CONTENT ========== -->
+        <main class="main-content">
+
+            <!-- Featured Image -->
+            <div class="featured-image">
+                <img
+                src="data:image/svg+xml,%3Csvg xmlns='[w3.org](http://www.w3.org/2000/svg)' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23d9cdb8'/%3E%3Crect x='120' y='80' width='260' height='180' rx='8' fill='%23b8a88a'/%3E%3Crect x='140' y='100' width='220' height='140' rx='3' fill='%23e8e0d0'/%3E%3Crect x='155' y='115' width='60' height='8' rx='2' fill='%23ccc0b0'/%3E%3Crect x='155' y='132' width='140' height='6' rx='2' fill='%23ccc0b0'/%3E%3Crect x='155' y='145' width='120' height='6' rx='2' fill='%23ccc0b0'/%3E%3Crect x='155' y='158' width='100' height='6' rx='2' fill='%23ccc0b0'/%3E%3Crect x='440' y='160' width='100' height='140' rx='4' fill='%23f5f0e8'/%3E%3Crect x='455' y='180' width='70' height='2' rx='1' fill='%23d0c8b8'/%3E%3Crect x='455' y='190' width='55' height='2' rx='1' fill='%23d0c8b8'/%3E%3Crect x='455' y='200' width='65' height='2' rx='1' fill='%23d0c8b8'/%3E%3Crect x='455' y='220' width='40' height='2' rx='1' fill='%23d0c8b8'/%3E%3Crect x='455' y='230' width='50' height='2' rx='1' fill='%23d0c8b8'/%3E%3Crect x='455' y='240' width='35' height='2' rx='1' fill='%23d0c8b8'/%3E%3Crect x='580' y='200' width='70' height='100' rx='6' fill='%23333'/%3E%3Crect x='590' y='210' width='50' height='40' rx='2' fill='%23555'/%3E%3Crect x='590' y='260' width='50' height='6' rx='2' fill='%23555'/%3E%3Crect x='590' y='274' width='40' height='6' rx='2' fill='%23555'/%3E%3Ccircle cx='370' cy='380' r='28' fill='%238cb87a'/%3E%3Ccircle cx='370' cy='380' r='14' fill='%239cc88a'/%3E%3Crect x='335' y='410' width='70' height='16' rx='8' fill='%23a08060'/%3E%3Crect x='200' y='400' width='120' height='60' rx='6' fill='%23fafafa'/%3E%3Crect x='215' y='415' width='60' height='4' rx='2' fill='%23ddd'/%3E%3Crect x='215' y='425' width='90' height='4' rx='2' fill='%23ddd'/%3E%3Crect x='215' y='435' width='75' height='4' rx='2' fill='%23ddd'/%3E%3C/svg%3E"
+                alt="Wooden desk with laptop, notebook, glass of water, phone, and a small plant"
+                loading="eager"
+                >
+            </div>
+
+            <!-- Meta Row -->
+            <div class="meta-row">
+                <span class="meta-item">
+                    <span class="meta-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 20c0-4 4-7 8-7s8 3 8 7"/>
+                        </svg>
+                    </span>
+                    <span class="meta-link">Admin</span>
+                </span>
+                <span class="meta-item">
+                    <span class="meta-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="4" width="18" height="18" rx="2"/>
+                            <path d="M3 10h18M8 2v4M16 2v4"/>
+                        </svg>
+                    </span>
+                    <span>14 Oct 2022</span>
+                </span>
+                <span class="meta-item">
+                    <span class="meta-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/>
+                            <line x1="7" y1="7" x2="7.01" y2="7"/>
+                        </svg>
+                    </span>
+                    <span class="meta-link">Wood</span>
+                </span>
+            </div>
+
+            <!-- Post Title -->
+            <h1 class="post-title">Going all-in with millennial design</h1>
+
+            <!-- Post Excerpt -->
+            <p class="post-excerpt">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum.
+            </p>
+
+            <!-- Read More -->
+            <a class="read-more" href="#" aria-label="Read full article: Going all-in with millennial design">Read more</a>
+
+        </main>
+
+        <!-- ========== SIDEBAR ========== -->
+        <aside class="sidebar" aria-label="Blog sidebar">
+
+            <!-- Search -->
+            <div class="sidebar-search">
+                <input
+                type="text"
+                id="searchInput"
+                placeholder="Search..."
+                aria-label="Search blog posts"
+                autocomplete="off"
+                >
+                <button class="search-btn" id="searchBtn" aria-label="Search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Categories -->
+            <h3 class="sidebar-section-title">Categories</h3>
+            <ul class="category-list" id="categoryList">
+                <li data-category="crafts">
+                    <span>Crafts</span>
+                    <span class="category-count">2</span>
+                </li>
+                <li data-category="design">
+                    <span>Design</span>
+                    <span class="category-count">8</span>
+                </li>
+                <li data-category="handmade">
+                    <span>Handmade</span>
+                    <span class="category-count">7</span>
+                </li>
+                <li data-category="interior">
+                    <span>Interior</span>
+                    <span class="category-count">1</span>
+                </li>
+                <li data-category="wood" class="active">
+                    <span>Wood</span>
+                    <span class="category-count">6</span>
+                </li>
+            </ul>
+
+            <!-- Recent Posts -->
+            <h3 class="sidebar-section-title">Recent Posts</h3>
+            <div id="recentPosts">
+                <div class="recent-post-item" data-post="millennial-design">
+                    <div class="recent-post-thumb">
+                        <img
+                        src="data:image/svg+xml,%3Csvg xmlns='[w3.org](http://www.w3.org/2000/svg)' width='60' height='60' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d9cdb8'/%3E%3Crect x='8' y='10' width='20' height='14' rx='2' fill='%23b8a88a'/%3E%3Crect x='10' y='12' width='16' height='10' rx='1' fill='%23e8e0d0'/%3E%3Ccircle cx='40' cy='30' r='8' fill='%238cb87a'/%3E%3C/svg%3E"
+                        alt="Millennial design thumbnail"
+                        loading="lazy"
+                        width="60"
+                        height="60"
+                        >
+                    </div>
+                    <div class="recent-post-info">
+                        <span class="recent-post-title">Going all-in with millennial design</span>
+                        <span class="recent-post-date">03 Aug 2022</span>
+                    </div>
+                </div>
+                <div class="recent-post-item" data-post="decorating">
+                    <div class="recent-post-thumb">
+                        <img
+                        src="data:image/svg+xml,%3Csvg xmlns='[w3.org](http://www.w3.org/2000/svg)' width='60' height='60' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23c8d5c0'/%3E%3Ccircle cx='30' cy='22' r='10' fill='%23e8c060'/%3E%3Crect x='15' y='36' width='30' height='16' rx='3' fill='%23a0b090'/%3E%3Crect x='20' y='40' width='20' height='6' rx='2' fill='%23809070'/%3E%3C/svg%3E"
+                        alt="Decorating thumbnail"
+                        loading="lazy"
+                        width="60"
+                        height="60"
+                        >
+                    </div>
+                    <div class="recent-post-info">
+                        <span class="recent-post-title">Exploring new ways of decorating</span>
+                        <span class="recent-post-date">03 Aug 2022</span>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
