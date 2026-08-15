@@ -344,3 +344,104 @@ document.addEventListener("DOMContentLoaded", () => {
                 'color: #b88e5c; font-weight: bold;'
             );
         })();
+
+        // Third section
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+:root{
+  --gold: #B88E2F;
+  --gold-light: #FFF3E3;
+  --text-gray: #9F9F9F;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body { background: #fff; }
+
+.blog-section {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 80px) clamp(20px, 4vw, 80px);
+}
+
+.blog-wrapper { max-width: 820px; margin: 0 auto; }
+
+/* Blog Card */
+.blog-card { display: none; }
+.blog-card.active { display: block; }
+
+.blog-img-box {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.blog-img-box img { width: 100%; height: auto; display: block; }
+
+.blog-meta {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.meta-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-gray); }
+
+.blog-title {
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 500;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.blog-text {
+  font-size: clamp(14px, 1.1vw, 15px);
+  color: var(--text-gray);
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.read-more {
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+  padding-bottom: 4px;
+  transition: 0.3s;
+}
+.read-more:hover { color: var(--gold); border-color: var(--gold); }
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 60px;
+}
+.page-btn {
+  min-width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+  background: var(--gold-light);
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+}
+.page-btn:hover { background: #f5e0c8; }
+.page-btn.active {
+  background: var(--gold);
+  color: #fff;
+}
+
+/* Mobile */
+ @ media(max-width: 600px){
+.blog-section { padding: 30px 5%; }
+.blog-meta { gap: 15px; }
+.meta-item { font-size: 12px; }
+.pagination { gap: 8px; margin-top: 40px; }
+.page-btn { min-width: 40px; height: 40px; font-size: 14px; }
+} 
