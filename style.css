@@ -1922,332 +1922,14 @@ body {
 
 
 /* Footer */
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-    width: 100%;
-    background: #fff;
-    border-top: 1px solid #e5e5e5;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Main footer */
-
-.footer-container {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 40px 0 35px;
-
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.55fr;
-    column-gap: 40px;
-}
-
-/* =========================
-   BRAND
-========================= */
-
-.footer-brand h2 {
-    margin: 0;
-    font-size: 22px;
-    font-weight: 700;
-    color: #111;
-}
-
-.footer-brand p {
-    margin-top: 24px;
-
-    font-size: 12px;
-    line-height: 20px;
-    color: #999;
-}
-
-/* =========================
-   COLUMNS
-========================= */
-
-.footer-column h4,
-.footer-newsletter h4 {
-    margin: 0 0 26px;
-
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
-}
-
-.footer-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-column a {
-    width: fit-content;
-
-    margin-bottom: 24px;
-
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 500;
-    color: #111;
-
-    transition: color 0.2s ease;
-}
-
-.footer-column a:hover {
-    color: #777;
-}
-
-/* =========================
-   NEWSLETTER
-========================= */
-
-.newsletter-form {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-}
-
-.newsletter-form input {
-    width: 180px;
-    height: 32px;
-
-    border: none;
-    border-bottom: 1px solid #777;
-    outline: none;
-
-    padding: 0 0 6px;
-
-    font-size: 12px;
-    color: #333;
-
-    background: transparent;
-}
-
-.newsletter-form input::placeholder {
-    color: #999;
-}
-
-.newsletter-form button {
-    height: 32px;
-
-    border: none;
-    border-bottom: 1px solid #111;
-
-    padding: 0 0 6px;
-
-    background: transparent;
-
-    font-size: 12px;
-    font-weight: 600;
-    color: #111;
-
-    cursor: pointer;
-
-    transition: 0.2s ease;
-}
-
-.newsletter-form button:hover {
-    opacity: 0.55;
-}
-
-/* =========================
-   BOTTOM
-========================= */
-
-.footer-bottom {
-    max-width: 1240px;
-    margin: 0 auto;
-
-    border-top: 1px solid #e5e5e5;
-
-    padding: 22px 0 24px;
-}
-
-.footer-bottom p {
-    margin: 0;
-
-    font-size: 12px;
-    color: #111;
-}
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 900px) {
-
-    .footer-container {
-        padding: 30px 35px 25px;
-
-        grid-template-columns:
-            1.5fr
-            1fr
-            1fr;
-        
-        row-gap: 30px;
-    }
-
-    .footer-brand {
-        grid-column: 1 / -1;
-    }
-
-    .footer-newsletter {
-        grid-column: 1 / -1;
-    }
-
-    .footer-bottom {
-        margin: 0 35px;
-    }
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-    .footer-container {
-        padding: 30px 25px;
-        display: grid;
-
-        grid-template-columns: 1fr 1fr;
-        gap: 35px 20px;
-    }
-
-    .footer-brand {
-        grid-column: 1 / -1;
-    }
-
-    .footer-brand h2 {
-        font-size: 18px;
-    }
-
-    .footer-brand p {
-        margin-top: 18px;
-        font-size: 10px;
-        line-height: 17px;
-    }
-
-    .footer-column h4,
-    .footer-newsletter h4 {
-        margin-bottom: 20px;
-        font-size: 10px;
-    }
-
-    .footer-column a {
-        font-size: 10px;
-        margin-bottom: 18px;
-    }
-
-    .footer-newsletter {
-        grid-column: 1 / -1;
-    }
-
-    .newsletter-form {
-        max-width: 270px;
-    }
-
-    .newsletter-form input {
-        width: 170px;
-        font-size: 9px;
-    }
-
-    .newsletter-form button {
-        font-size: 8px;
-    }
-
-    .footer-bottom {
-        margin: 0 25px;
-        padding: 18px 0;
-    }
-
-    .footer-bottom p {
-        font-size: 9px;
-    }
-}
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
-@media (max-width: 400px) {
-
-    .footer-container {
-        grid-template-columns: 1fr 1fr;
-        padding-left: 18px;
-        padding-right: 18px;
-    }
-
-    .footer-bottom {
-        margin-left: 18px;
-        margin-right: 18px;
-    }
-
-    .newsletter-form input {
-        width: 145px;
-    }
-} 
-
-
-/* cart footer */
-
-
 /* =========================================================
-   RESET
-========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    width: 100%;
-    min-height: 100vh;
-
-    font-family:
-        "Poppins",
-        "Segoe UI",
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    background: #ffffff;
-    color: #111111;
-
-    overflow-x: hidden;
-}
-
-button,
-input {
-    font: inherit;
-}
-
-button {
-    cursor: pointer;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-
-/* =========================================================
-   FOOTER
+   FOOTER - CLEAN RESPONSIVE VERSION
 ========================================================= */
 
 .site-footer {
     width: 100%;
-    background: #ffffff;
+    background: #fff;
+    overflow: hidden;
 }
 
 
@@ -2257,35 +1939,25 @@ a {
 
 .footer-features {
     width: 100%;
-
     background: #fbf4eb;
-
     border-top: 1px solid #f0e9df;
     border-bottom: 1px solid #e5e0da;
 }
 
-
 .features-container {
-    width: min(100% - 80px, 1400px);
-
+    width: min(1400px, calc(100% - 80px));
     min-height: 137px;
-
     margin: 0 auto;
 
     display: grid;
-
-    grid-template-columns:
-        repeat(4, minmax(0, 1fr));
-
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     align-items: center;
 
     gap: 30px;
 }
 
 
-/* =========================================================
-   FEATURE ITEM
-========================================================= */
+/* Feature Item */
 
 .feature-item {
     min-width: 0;
@@ -2293,19 +1965,17 @@ a {
     display: flex;
     align-items: center;
 
-    gap: 10px;
+    gap: 12px;
 }
 
 
-/* =========================================================
-   FEATURE ICON
-========================================================= */
+/* Icon */
 
 .feature-icon {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
 
-    flex: 0 0 34px;
+    flex: 0 0 36px;
 
     display: flex;
     align-items: center;
@@ -2317,30 +1987,27 @@ a {
 .feature-icon svg {
     width: 100%;
     height: 100%;
-
     display: block;
 }
 
 
-/* =========================================================
-   FEATURE TEXT
-========================================================= */
+/* Feature Content */
 
 .feature-content {
     min-width: 0;
 }
 
 .feature-content h3 {
-    margin: 0 0 3px;
+    margin: 0 0 5px;
 
     font-size: 15px;
-    line-height: 19px;
+    line-height: 20px;
 
     font-weight: 600;
 
-    white-space: nowrap;
-
     color: #292929;
+
+    white-space: normal;
 }
 
 .feature-content p {
@@ -2353,7 +2020,7 @@ a {
 
     color: #8b8b8b;
 
-    white-space: nowrap;
+    white-space: normal;
 }
 
 
@@ -2363,8 +2030,7 @@ a {
 
 .footer-main {
     width: 100%;
-
-    background: #ffffff;
+    background: #fff;
 }
 
 
@@ -2373,11 +2039,11 @@ a {
 ========================================================= */
 
 .footer-container {
-    width: min(100% - 116px, 1400px);
+    width: min(1400px, calc(100% - 116px));
 
     margin: 0 auto;
 
-    padding: 27px 0 24px;
+    padding: 38px 0 30px;
 
     display: grid;
 
@@ -2402,21 +2068,21 @@ a {
 }
 
 .footer-brand h2 {
-    margin: 0 0 27px;
+    margin: 0 0 25px;
 
-    font-size: 15px;
-    line-height: 20px;
+    font-size: 18px;
+    line-height: 24px;
 
     font-weight: 700;
 
-    color: #111111;
+    color: #111;
 }
 
 .footer-brand address {
-    max-width: 220px;
+    max-width: 260px;
 
-    font-size: 9px;
-    line-height: 14px;
+    font-size: 11px;
+    line-height: 17px;
 
     font-style: normal;
 
@@ -2433,37 +2099,39 @@ a {
 }
 
 .footer-column h4 {
-    margin: 0 0 29px;
+    margin: 0 0 25px;
 
-    font-size: 9px;
-    line-height: 13px;
+    font-size: 11px;
+    line-height: 16px;
 
-    font-weight: 400;
+    font-weight: 500;
 
-    color: #a0a0a0;
+    color: #999;
 }
 
 
 /* =========================================================
-   FOOTER NAV
+   FOOTER NAVIGATION
 ========================================================= */
 
 .footer-nav {
     display: flex;
     flex-direction: column;
 
-    gap: 22px;
+    gap: 16px;
 }
 
 .footer-nav a {
     width: fit-content;
 
-    font-size: 9px;
-    line-height: 13px;
+    font-size: 11px;
+    line-height: 17px;
 
     font-weight: 400;
 
-    color: #111111;
+    color: #111;
+
+    text-decoration: none;
 
     transition: color 0.2s ease;
 }
@@ -2479,16 +2147,16 @@ a {
 
 .newsletter-form {
     width: 100%;
-    max-width: 250px;
+    max-width: 300px;
 
     display: flex;
     align-items: center;
 
-    gap: 8px;
+    gap: 10px;
 
-    border-bottom: 1px solid #777777;
+    border-bottom: 1px solid #777;
 
-    padding-bottom: 5px;
+    padding-bottom: 7px;
 }
 
 .newsletter-form input {
@@ -2500,14 +2168,16 @@ a {
 
     background: transparent;
 
-    font-size: 8px;
-    line-height: 13px;
+    padding: 0;
 
-    color: #333333;
+    font-size: 11px;
+    line-height: 17px;
+
+    color: #333;
 }
 
 .newsletter-form input::placeholder {
-    color: #aaaaaa;
+    color: #aaa;
 }
 
 .newsletter-form button {
@@ -2520,16 +2190,19 @@ a {
 
     padding: 0;
 
-    font-size: 7px;
-    line-height: 12px;
+    font-size: 10px;
+    line-height: 16px;
 
-    font-weight: 500;
+    font-weight: 600;
 
-    color: #222222;
+    color: #222;
 
     text-decoration: underline;
+    text-underline-offset: 3px;
 
-    text-underline-offset: 2px;
+    cursor: pointer;
+
+    white-space: nowrap;
 
     transition: color 0.2s ease;
 }
@@ -2543,17 +2216,17 @@ a {
 
     margin-top: 7px;
 
-    min-height: 12px;
+    min-height: 15px;
 
-    font-size: 8px;
-    line-height: 12px;
+    font-size: 9px;
+    line-height: 14px;
 
     color: #b88a35;
 }
 
 
 /* =========================================================
-   BOTTOM
+   FOOTER BOTTOM
 ========================================================= */
 
 .footer-bottom {
@@ -2561,11 +2234,11 @@ a {
 }
 
 .footer-bottom-inner {
-    width: min(100% - 116px, 1400px);
+    width: min(1400px, calc(100% - 116px));
 
     margin: 0 auto;
 
-    padding: 17px 0 44px;
+    padding: 18px 0 35px;
 
     border-top: 1px solid #e5e5e5;
 }
@@ -2573,32 +2246,28 @@ a {
 .footer-bottom-inner p {
     margin: 0;
 
-    font-size: 9px;
-    line-height: 14px;
+    font-size: 10px;
+    line-height: 16px;
 
-    color: #222222;
+    color: #222;
 }
 
 
 /* =========================================================
    LARGE DESKTOP
-   1440px+
 ========================================================= */
 
 @media (min-width: 1440px) {
 
     .features-container {
+        width: min(1450px, calc(100% - 120px));
         min-height: 145px;
-
-        width: min(100% - 120px, 1450px);
-
         gap: 45px;
     }
 
     .feature-icon {
         width: 38px;
         height: 38px;
-
         flex-basis: 38px;
     }
 
@@ -2609,32 +2278,28 @@ a {
 
     .feature-content p {
         font-size: 12px;
+        line-height: 17px;
     }
 
     .footer-container {
-        width: min(100% - 150px, 1450px);
-
-        padding-top: 30px;
-
+        width: min(1450px, calc(100% - 150px));
         column-gap: 70px;
     }
 
     .footer-bottom-inner {
-        width: min(100% - 150px, 1450px);
+        width: min(1450px, calc(100% - 150px));
     }
 }
 
 
 /* =========================================================
    LAPTOP
-   1025px - 1439px
 ========================================================= */
 
 @media (min-width: 1025px) and (max-width: 1439px) {
 
     .features-container {
         width: calc(100% - 80px);
-
         gap: 25px;
     }
 
@@ -2645,21 +2310,21 @@ a {
     .feature-icon {
         width: 33px;
         height: 33px;
-
         flex-basis: 33px;
     }
 
     .feature-content h3 {
         font-size: 14px;
+        line-height: 19px;
     }
 
     .feature-content p {
         font-size: 10px;
+        line-height: 15px;
     }
 
     .footer-container {
         width: calc(100% - 90px);
-
         column-gap: 40px;
     }
 
@@ -2671,7 +2336,6 @@ a {
 
 /* =========================================================
    TABLET LANDSCAPE
-   769px - 1024px
 ========================================================= */
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -2685,19 +2349,18 @@ a {
     }
 
     .feature-item {
-        gap: 7px;
+        gap: 8px;
     }
 
     .feature-icon {
         width: 30px;
         height: 30px;
-
         flex-basis: 30px;
     }
 
     .feature-content h3 {
         font-size: 12px;
-        line-height: 16px;
+        line-height: 17px;
     }
 
     .feature-content p {
@@ -2716,24 +2379,46 @@ a {
 
         column-gap: 25px;
 
-        padding-top: 28px;
+        padding-top: 30px;
     }
 
     .footer-brand h2 {
-        margin-bottom: 24px;
+        font-size: 17px;
+    }
+
+    .footer-brand address {
+        font-size: 10px;
+    }
+
+    .footer-column h4 {
+        font-size: 10px;
+    }
+
+    .footer-nav a {
+        font-size: 10px;
+    }
+
+    .newsletter-form {
+        max-width: 240px;
+    }
+
+    .newsletter-form input {
+        font-size: 10px;
+    }
+
+    .newsletter-form button {
+        font-size: 9px;
     }
 
     .footer-bottom-inner {
         width: calc(100% - 60px);
-
-        padding-bottom: 35px;
+        padding-bottom: 30px;
     }
 }
 
 
 /* =========================================================
    TABLET PORTRAIT
-   601px - 768px
 ========================================================= */
 
 @media (min-width: 601px) and (max-width: 768px) {
@@ -2745,8 +2430,7 @@ a {
 
         padding: 28px 0;
 
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
         gap: 28px 25px;
     }
@@ -2754,20 +2438,18 @@ a {
     .feature-icon {
         width: 32px;
         height: 32px;
-
         flex-basis: 32px;
     }
 
     .feature-content h3 {
         font-size: 13px;
+        line-height: 18px;
     }
 
     .feature-content p {
         font-size: 9px;
+        line-height: 14px;
     }
-
-
-    /* FOOTER */
 
     .footer-container {
         width: calc(100% - 50px);
@@ -2779,7 +2461,7 @@ a {
 
         gap: 35px 30px;
 
-        padding-top: 30px;
+        padding: 30px 0;
     }
 
     .footer-brand {
@@ -2796,7 +2478,6 @@ a {
 
     .footer-bottom-inner {
         width: calc(100% - 50px);
-
         padding-bottom: 30px;
     }
 }
@@ -2804,12 +2485,11 @@ a {
 
 /* =========================================================
    MOBILE
-   376px - 600px
 ========================================================= */
 
-@media (min-width: 376px) and (max-width: 600px) {
+@media (max-width: 600px) {
 
-    /* FEATURES */
+    /* TOP FEATURES */
 
     .features-container {
         width: calc(100% - 36px);
@@ -2825,27 +2505,31 @@ a {
 
     .feature-item {
         width: 100%;
-
         justify-content: flex-start;
     }
 
     .feature-icon {
         width: 35px;
         height: 35px;
-
         flex-basis: 35px;
     }
 
     .feature-content h3 {
-        font-size: 14px;
+        font-size: 15px;
+        line-height: 20px;
+
+        white-space: normal;
     }
 
     .feature-content p {
         font-size: 10px;
+        line-height: 15px;
+
+        white-space: normal;
     }
 
 
-    /* FOOTER */
+    /* MAIN FOOTER */
 
     .footer-container {
         width: calc(100% - 40px);
@@ -2855,7 +2539,7 @@ a {
         display: flex;
         flex-direction: column;
 
-        gap: 32px;
+        gap: 30px;
     }
 
     .footer-brand,
@@ -2864,137 +2548,145 @@ a {
     }
 
     .footer-brand h2 {
+        font-size: 18px;
+        line-height: 24px;
+
         margin-bottom: 18px;
     }
 
     .footer-brand address {
-        max-width: 260px;
+        max-width: 100%;
+
+        font-size: 11px;
+        line-height: 17px;
     }
 
     .footer-column h4 {
         margin-bottom: 18px;
+
+        font-size: 12px;
+        line-height: 17px;
     }
 
     .footer-nav {
-        gap: 16px;
+        gap: 15px;
     }
+
+    .footer-nav a {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+
+    /* NEWSLETTER */
 
     .newsletter-form {
         width: 100%;
         max-width: 100%;
+
+        gap: 10px;
     }
+
+    .newsletter-form input {
+        font-size: 11px;
+        line-height: 17px;
+    }
+
+    .newsletter-form input::placeholder {
+        font-size: 11px;
+    }
+
+    .newsletter-form button {
+        font-size: 9px;
+        line-height: 16px;
+    }
+
+
+    /* BOTTOM */
 
     .footer-bottom-inner {
         width: calc(100% - 40px);
 
         padding: 16px 0 30px;
     }
+
+    .footer-bottom-inner p {
+        font-size: 10px;
+        line-height: 16px;
+    }
 }
 
 
 /* =========================================================
    SMALL MOBILE
-   0px - 375px
 ========================================================= */
 
 @media (max-width: 375px) {
 
-    /* FEATURES */
-
     .features-container {
         width: calc(100% - 30px);
 
-        min-height: auto;
-
         padding: 25px 0;
 
-        display: flex;
-        flex-direction: column;
-
-        gap: 23px;
+        gap: 22px;
     }
 
     .feature-item {
-        width: 100%;
-
-        display: flex;
-        align-items: center;
-
-        gap: 10px;
+        gap: 9px;
     }
 
     .feature-icon {
-        width: 32px;
-        height: 32px;
-
-        flex-basis: 32px;
+        width: 31px;
+        height: 31px;
+        flex-basis: 31px;
     }
 
     .feature-content h3 {
-        font-size: 13px;
-        line-height: 17px;
+        font-size: 14px;
+        line-height: 19px;
     }
 
     .feature-content p {
         font-size: 9px;
-        line-height: 13px;
+        line-height: 14px;
     }
 
-
-    /* FOOTER */
 
     .footer-container {
         width: calc(100% - 30px);
 
         padding: 30px 0 22px;
 
-        display: flex;
-        flex-direction: column;
-
-        gap: 28px;
-    }
-
-    .footer-brand {
-        width: 100%;
+        gap: 27px;
     }
 
     .footer-brand h2 {
-        margin-bottom: 16px;
-
-        font-size: 15px;
+        font-size: 17px;
+        line-height: 23px;
     }
 
     .footer-brand address {
-        max-width: 240px;
-
-        font-size: 9px;
-    }
-
-    .footer-column {
-        width: 100%;
+        font-size: 10px;
+        line-height: 16px;
     }
 
     .footer-column h4 {
-        margin-bottom: 16px;
-
-        font-size: 9px;
+        font-size: 11px;
+        line-height: 16px;
     }
 
     .footer-nav {
-        gap: 14px;
+        gap: 13px;
     }
 
     .footer-nav a {
+        font-size: 11px;
+        line-height: 17px;
+    }
+
+    .newsletter-form input,
+    .newsletter-form input::placeholder {
         font-size: 10px;
-    }
-
-    .newsletter-form {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .newsletter-form input {
-        font-size: 9px;
     }
 
     .newsletter-form button {
@@ -3003,50 +2695,47 @@ a {
 
     .footer-bottom-inner {
         width: calc(100% - 30px);
-
         padding: 15px 0 25px;
     }
 
     .footer-bottom-inner p {
-        font-size: 8px;
+        font-size: 9px;
+        line-height: 15px;
     }
 }
 
 
 /* =========================================================
-   VERY SMALL DEVICES
-   320px and below
+   VERY SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 320px) {
 
     .features-container {
         width: calc(100% - 24px);
-
         padding: 22px 0;
-
         gap: 20px;
     }
 
     .feature-icon {
-        width: 30px;
-        height: 30px;
-
-        flex-basis: 30px;
+        width: 29px;
+        height: 29px;
+        flex-basis: 29px;
     }
 
     .feature-content h3 {
-        font-size: 12px;
+        font-size: 13px;
+        line-height: 18px;
     }
 
     .feature-content p {
         font-size: 8px;
+        line-height: 13px;
     }
 
     .footer-container {
         width: calc(100% - 24px);
-
-        gap: 25px;
+        gap: 24px;
     }
 
     .footer-bottom-inner {
@@ -3062,289 +2751,10 @@ a {
 @media (hover: none) and (pointer: coarse) {
 
     .footer-nav a:hover {
-        color: #111111;
+        color: #111;
     }
 
     .newsletter-form button:hover {
-        color: #222222;
-    }
-}
-/* ,, */
-/* =========================================================
-   FINAL - BIGGER & CLEARER FOOTER TEXT
-========================================================= */
-
-/* =========================
-   TOP FEATURES
-========================= */
-
-.feature-content h3 {
-    font-size: 30px;
-    line-height: 22px;
-    font-weight: 600;
-}
-
-.feature-content p {
-    font-size: 12px;
-    line-height: 18px;
-}
-
-
-/* =========================
-   LOGO
-========================= */
-
-.footer-brand h2 {
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 700;
-
-    margin-bottom: 28px;
-}
-
-
-/* =========================
-   ADDRESS
-========================= */
-
-.footer-brand address {
-    font-size: 11px;
-    line-height: 17px;
-}
-
-
-/* =========================
-   LINKS / HELP / NEWSLETTER
-========================= */
-
-.footer-column h4 {
-    font-size: 11px;
-    line-height: 16px;
-    font-weight: 400;
-
-    margin-bottom: 30px;
-}
-
-
-/* =========================
-   FOOTER LINKS
-========================= */
-
-.footer-nav a {
-    font-size: 11px;
-    line-height: 17px;
-    font-weight: 400;
-}
-
-
-/* =========================
-   NEWSLETTER INPUT
-========================= */
-
-.newsletter-form {
-    max-width: 300px;
-    gap: 12px;
-    padding-bottom: 7px;
-}
-
-.newsletter-form input {
-    font-size: 10px;
-    line-height: 16px;
-}
-
-.newsletter-form input::placeholder {
-    font-size: 10px;
-}
-
-
-/* =========================
-   SUBSCRIBE BUTTON
-========================= */
-
-.newsletter-form button {
-    font-size: 9px;
-    line-height: 15px;
-    font-weight: 600;
-
-    white-space: nowrap;
-}
-
-
-/* =========================
-   COPYRIGHT
-========================= */
-
-.footer-bottom-inner p {
-    font-size: 10px;
-    line-height: 16px;
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 1024px) {
-
-    .feature-content h3 {
-        font-size: 15px;
-    }
-
-    .feature-content p {
-        font-size: 11px;
-    }
-
-    .footer-brand h2 {
-        font-size: 17px;
-    }
-
-    .footer-brand address {
-        font-size: 10px;
-    }
-
-    .footer-column h4 {
-        font-size: 11px;
-    }
-
-    .footer-nav a {
-        font-size: 10px;
-    }
-
-    .newsletter-form input {
-        font-size: 10px;
-    }
-
-    .newsletter-form button {
-        font-size: 9px;
-    }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .feature-content h3 {
-        font-size: 16px;
-        line-height: 21px;
-    }
-
-    .feature-content p {
-        font-size: 11px;
-        line-height: 17px;
-    }
-
-
-    .footer-brand h2 {
-        font-size: 18px;
-        line-height: 24px;
-
-        margin-bottom: 18px;
-    }
-
-
-    .footer-brand address {
-        font-size: 11px;
-        line-height: 17px;
-    }
-
-
-    .footer-column h4 {
-        font-size: 12px;
-        line-height: 17px;
-
-        margin-bottom: 18px;
-    }
-
-
-    .footer-nav {
-        gap: 16px;
-    }
-
-
-    .footer-nav a {
-        font-size: 12px;
-        line-height: 18px;
-    }
-
-
-    .newsletter-form {
-        width: 100%;
-        max-width: 100%;
-
-        gap: 10px;
-    }
-
-
-    .newsletter-form input {
-        font-size: 11px;
-        line-height: 17px;
-    }
-
-    .newsletter-form input::placeholder {
-        font-size: 11px;
-    }
-
-
-    .newsletter-form button {
-        font-size: 9px;
-        line-height: 16px;
-    }
-
-
-    .footer-bottom-inner p {
-        font-size: 10px;
-        line-height: 16px;
-    }
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 375px) {
-
-    .feature-content h3 {
-        font-size: 15px;
-    }
-
-    .feature-content p {
-        font-size: 10px;
-    }
-
-
-    .footer-brand h2 {
-        font-size: 17px;
-    }
-
-
-    .footer-brand address {
-        font-size: 10px;
-        line-height: 16px;
-    }
-
-
-    .footer-column h4 {
-        font-size: 11px;
-    }
-
-
-    .footer-nav a {
-        font-size: 11px;
-        line-height: 17px;
-    }
-
-
-    .newsletter-form input,
-    .newsletter-form input::placeholder {
-        font-size: 10px;
-    }
-
-
-    .newsletter-form button {
-        font-size: 8px;
+        color: #222;
     }
 }

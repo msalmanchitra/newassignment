@@ -1,0 +1,1334 @@
+/* =========================================================
+   ABOUT NAVBAR
+========================================================= */
+
+.about-navbar {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    z-index: 1000;
+}
+
+.about-nav-container {
+    width: min(1400px, calc(100% - 80px));
+    min-height: 76px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+    text-decoration: none;
+}
+
+.about-logo span {
+    color: #b88a35;
+}
+
+.about-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.about-nav-links a {
+    color: #222;
+    font-size: 13px;
+    text-decoration: none;
+    transition: .25s ease;
+}
+
+.about-nav-links a:hover,
+.about-nav-links a.active {
+    color: #b88a35;
+}
+
+.about-nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.about-nav-icons a {
+    color: #222;
+    font-size: 15px;
+}
+
+.about-menu-btn {
+    display: none;
+
+    border: 0;
+    background: transparent;
+
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.about-mobile-menu {
+    display: none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.about-hero {
+    min-height: 420px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
+}
+
+.about-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .38);
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 700px;
+
+    padding: 30px;
+    color: #fff;
+}
+
+.about-hero-content span {
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.about-hero-content h1 {
+    margin: 15px 0;
+
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1;
+
+    font-weight: 600;
+}
+
+.about-hero-content p {
+    font-size: 15px;
+    line-height: 25px;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.about-intro {
+    width: min(1200px, calc(100% - 80px));
+
+    margin: 100px auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.about-intro-image img,
+.about-mission-image img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.about-intro-image img {
+    height: 520px;
+}
+
+.section-label {
+    display: block;
+
+    margin-bottom: 16px;
+
+    color: #b88a35;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.about-intro-content h2,
+.about-mission-content h2 {
+    margin: 0 0 25px;
+
+    font-size: clamp(32px, 4vw, 50px);
+    line-height: 1.12;
+
+    font-weight: 500;
+    color: #111;
+}
+
+.about-intro-content h2 span,
+.about-mission-content h2 span {
+    color: #b88a35;
+}
+
+.about-intro-content p,
+.about-mission-content p {
+    margin-bottom: 18px;
+
+    color: #777;
+
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.about-primary-btn,
+.about-outline-btn,
+.about-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 15px;
+
+    padding: 13px 22px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition: .3s ease;
+}
+
+.about-primary-btn {
+    background: #b88a35;
+    color: #fff;
+}
+
+.about-primary-btn:hover {
+    background: #111;
+}
+
+
+/* =========================================================
+   VALUES
+========================================================= */
+
+.about-values {
+    background: #fbf6ef;
+
+    padding: 90px 40px;
+}
+
+.about-section-heading {
+    max-width: 650px;
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.about-section-heading span {
+    color: #b88a35;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.about-section-heading h2 {
+    margin: 12px 0;
+
+    font-size: clamp(30px, 4vw, 45px);
+    font-weight: 500;
+}
+
+.about-section-heading p {
+    color: #777;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.about-value-grid {
+    width: min(1200px, 100%);
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.about-value-card {
+    padding: 35px 25px;
+
+    background: #fff;
+
+    text-align: center;
+
+    transition: .3s ease;
+}
+
+.about-value-card:hover {
+    transform: translateY(-7px);
+}
+
+.about-value-icon {
+    width: 50px;
+    height: 50px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fbf1e3;
+    color: #b88a35;
+
+    font-size: 18px;
+}
+
+.about-value-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 15px;
+}
+
+.about-value-card p {
+    color: #888;
+
+    font-size: 12px;
+    line-height: 21px;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.about-stats {
+    width: min(1100px, calc(100% - 60px));
+
+    margin: 0 auto;
+
+    padding: 75px 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    text-align: center;
+}
+
+.about-stat {
+    border-right: 1px solid #ddd;
+}
+
+.about-stat:last-child {
+    border-right: 0;
+}
+
+.about-stat strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #b88a35;
+
+    font-size: 34px;
+}
+
+.about-stat span {
+    color: #777;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MISSION
+========================================================= */
+
+.about-mission {
+    width: min(1200px, calc(100% - 80px));
+
+    margin: 30px auto 100px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.about-mission-image img {
+    height: 500px;
+}
+
+.about-outline-btn {
+    border: 1px solid #222;
+    color: #222;
+}
+
+.about-outline-btn:hover {
+    background: #111;
+    color: #fff;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.about-cta {
+    padding: 90px 30px;
+
+    background: #fbf4eb;
+
+    text-align: center;
+}
+
+.about-cta-content {
+    max-width: 650px;
+    margin: auto;
+}
+
+.about-cta-content > span {
+    color: #b88a35;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.about-cta h2 {
+    margin: 15px 0;
+
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 500;
+}
+
+.about-cta p {
+    color: #777;
+    font-size: 14px;
+}
+
+.about-cta-btn {
+    background: #111;
+    color: #fff;
+}
+
+.about-cta-btn:hover {
+    background: #b88a35;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .about-nav-container {
+        width: calc(100% - 40px);
+    }
+
+    .about-nav-links {
+        gap: 20px;
+    }
+
+    .about-intro,
+    .about-mission {
+        width: calc(100% - 50px);
+        gap: 40px;
+    }
+
+    .about-value-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .about-nav-container {
+        min-height: 65px;
+    }
+
+    .about-nav-links {
+        display: none;
+    }
+
+    .about-menu-btn {
+        display: block;
+    }
+
+    .about-mobile-menu {
+        display: flex;
+
+        max-height: 0;
+        overflow: hidden;
+
+        flex-direction: column;
+
+        background: #fff;
+
+        transition: max-height .3s ease;
+    }
+
+    .about-mobile-menu.show {
+        max-height: 300px;
+    }
+
+    .about-mobile-menu a {
+        padding: 15px 25px;
+
+        border-top: 1px solid #eee;
+
+        color: #222;
+        text-decoration: none;
+
+        font-size: 13px;
+    }
+
+    .about-mobile-menu a.active {
+        color: #b88a35;
+    }
+
+
+    .about-hero {
+        min-height: 330px;
+    }
+
+    .about-hero-content h1 {
+        font-size: 48px;
+    }
+
+    .about-hero-content p {
+        font-size: 13px;
+    }
+
+
+    .about-intro,
+    .about-mission {
+        width: calc(100% - 36px);
+
+        margin: 65px auto;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 40px;
+    }
+
+    .about-intro-image img,
+    .about-mission-image img {
+        height: 350px;
+    }
+
+
+    .about-values {
+        padding: 65px 18px;
+    }
+
+    .about-value-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .about-stats {
+        width: calc(100% - 40px);
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 35px 0;
+
+        padding: 60px 0;
+    }
+
+    .about-stat:nth-child(2) {
+        border-right: 0;
+    }
+
+
+    .about-mission {
+        flex-direction: column-reverse;
+    }
+
+
+    .about-cta {
+        padding: 65px 20px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .about-logo {
+        font-size: 17px;
+    }
+
+    .about-nav-icons {
+        gap: 13px;
+    }
+
+    .about-hero-content {
+        padding: 20px;
+    }
+
+    .about-hero-content h1 {
+        font-size: 40px;
+    }
+
+    .about-intro-content h2,
+    .about-mission-content h2 {
+        font-size: 32px;
+    }
+
+    .about-intro-content p,
+    .about-mission-content p {
+        font-size: 13px;
+        line-height: 23px;
+    }
+
+    .about-value-card {
+        padding: 30px 20px;
+    }
+
+    .about-stat strong {
+        font-size: 28px;
+    }
+
+    .about-stat span {
+        font-size: 10px;
+    }
+
+} 
+/* footer second code */
+
+
+/* =========================================================
+   ABOUT PAGE - BENEFITS BANNER
+========================================================= */
+
+.benefits {
+    width: 100%;
+    min-height: 180px;
+
+    padding: 45px 7%;
+
+    background: #fbf4eb;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    align-items: center;
+
+    gap: 35px;
+
+    border-top: 1px solid #eee4d8;
+    border-bottom: 1px solid #eee4d8;
+}
+
+
+/* =========================================================
+   BENEFIT ITEM
+========================================================= */
+
+.benefit {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   BENEFIT ICON
+========================================================= */
+
+.benefit-icon {
+    width: 52px;
+    height: 52px;
+
+    flex: 0 0 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #222;
+
+    font-size: 27px;
+}
+
+
+/* =========================================================
+   BENEFIT TEXT
+========================================================= */
+
+.benefit-text {
+    min-width: 0;
+}
+
+.benefit-text h3 {
+    margin: 0 0 7px;
+
+    color: #222;
+
+    font-size: 16px;
+    line-height: 20px;
+
+    font-weight: 600;
+}
+
+.benefit-text p {
+    margin: 0;
+
+    color: #9b9b9b;
+
+    font-size: 11px;
+    line-height: 16px;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   MAIN FOOTER
+========================================================= */
+
+.footer {
+    width: 100%;
+
+    background: #ffffff;
+
+    color: #222;
+}
+
+
+/* =========================================================
+   FOOTER CONTAINER
+========================================================= */
+
+.footer-container {
+    width: min(1200px, calc(100% - 100px));
+
+    margin: 0 auto;
+
+    padding: 55px 0 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.45fr
+        0.8fr
+        1fr
+        1.45fr;
+
+    gap: 55px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   FOOTER BRAND
+========================================================= */
+
+.footer-brand {
+    min-width: 0;
+}
+
+.footer-brand h2 {
+    margin: 0 0 28px;
+
+    font-size: 24px;
+    line-height: 30px;
+
+    font-weight: 700;
+
+    color: #111;
+}
+
+.footer-brand p {
+    max-width: 260px;
+
+    margin: 0;
+
+    color: #9b9b9b;
+
+    font-size: 11px;
+    line-height: 20px;
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.footer-column {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 17px;
+}
+
+.footer-column h4,
+.footer-newsletter h4 {
+    margin: 0 0 15px;
+
+    color: #9b9b9b;
+
+    font-size: 11px;
+    line-height: 16px;
+
+    font-weight: 500;
+}
+
+.footer-column a {
+    color: #222;
+
+    font-size: 11px;
+    line-height: 17px;
+
+    text-decoration: none;
+
+    transition:
+        color .25s ease,
+        transform .25s ease;
+}
+
+.footer-column a:hover {
+    color: #b88a35;
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+.footer-newsletter {
+    min-width: 0;
+}
+
+.newsletter-form {
+    width: 100%;
+    max-width: 300px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid #777;
+}
+
+.newsletter-form input {
+    width: 100%;
+    min-width: 0;
+
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #222;
+
+    font-family: inherit;
+
+    font-size: 11px;
+    line-height: 18px;
+}
+
+.newsletter-form input::placeholder {
+    color: #aaa;
+}
+
+.newsletter-form button {
+    flex: 0 0 auto;
+
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #222;
+
+    font-size: 9px;
+    line-height: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-decoration: underline;
+
+    text-underline-offset: 4px;
+
+    white-space: nowrap;
+
+    transition: color .25s ease;
+}
+
+.newsletter-form button:hover {
+    color: #b88a35;
+}
+
+
+/* =========================================================
+   BOTTOM FOOTER
+========================================================= */
+
+.footer-bottom {
+    width: min(1200px, calc(100% - 100px));
+
+    margin: 0 auto;
+
+    padding: 20px 0 35px;
+
+    border-top: 1px solid #e5e5e5;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #222;
+
+    font-size: 10px;
+    line-height: 16px;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1440px) {
+
+    .benefits {
+        padding-left: 8%;
+        padding-right: 8%;
+
+        min-height: 190px;
+
+        gap: 50px;
+    }
+
+    .benefit-icon {
+        width: 55px;
+        height: 55px;
+
+        flex-basis: 55px;
+
+        font-size: 29px;
+    }
+
+    .benefit-text h3 {
+        font-size: 17px;
+    }
+
+    .footer-container,
+    .footer-bottom {
+        width: min(1300px, calc(100% - 120px));
+    }
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (min-width: 901px) and (max-width: 1200px) {
+
+    .benefits {
+        padding: 40px 5%;
+
+        gap: 25px;
+    }
+
+    .benefit {
+        gap: 12px;
+    }
+
+    .benefit-icon {
+        width: 42px;
+        height: 42px;
+
+        flex-basis: 42px;
+
+        font-size: 23px;
+    }
+
+    .benefit-text h3 {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .benefit-text p {
+        font-size: 10px;
+    }
+
+
+    .footer-container {
+        width: calc(100% - 70px);
+
+        grid-template-columns:
+            1.4fr
+            .8fr
+            1fr
+            1.3fr;
+
+        gap: 35px;
+    }
+
+    .footer-bottom {
+        width: calc(100% - 70px);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+    .benefits {
+        min-height: auto;
+
+        padding: 40px 40px;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 35px 25px;
+    }
+
+    .benefit-icon {
+        width: 45px;
+        height: 45px;
+
+        flex-basis: 45px;
+
+        font-size: 24px;
+    }
+
+    .benefit-text h3 {
+        font-size: 14px;
+    }
+
+    .benefit-text p {
+        font-size: 10px;
+    }
+
+
+    .footer-container {
+        width: calc(100% - 60px);
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 45px 35px;
+
+        padding: 45px 0 40px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-newsletter {
+        width: 100%;
+    }
+
+    .newsletter-form {
+        max-width: 100%;
+    }
+
+    .footer-bottom {
+        width: calc(100% - 60px);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* BENEFITS */
+
+    .benefits {
+        min-height: auto;
+
+        padding: 38px 25px;
+
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+    .benefit {
+        width: 100%;
+
+        gap: 15px;
+    }
+
+    .benefit-icon {
+        width: 45px;
+        height: 45px;
+
+        flex-basis: 45px;
+
+        font-size: 23px;
+    }
+
+    .benefit-text h3 {
+        margin-bottom: 5px;
+
+        font-size: 14px;
+        line-height: 19px;
+    }
+
+    .benefit-text p {
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+        width: calc(100% - 40px);
+
+        padding: 40px 0 30px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 32px;
+    }
+
+
+    .footer-brand {
+        width: 100%;
+    }
+
+    .footer-brand h2 {
+        margin-bottom: 18px;
+
+        font-size: 22px;
+    }
+
+    .footer-brand p {
+        max-width: 100%;
+
+        font-size: 11px;
+        line-height: 19px;
+    }
+
+
+    .footer-column {
+        width: 100%;
+
+        gap: 14px;
+    }
+
+    .footer-column h4,
+    .footer-newsletter h4 {
+        margin-bottom: 10px;
+
+        font-size: 11px;
+    }
+
+    .footer-column a {
+        font-size: 11px;
+        line-height: 18px;
+    }
+
+
+    /* NEWSLETTER */
+
+    .footer-newsletter {
+        width: 100%;
+    }
+
+    .newsletter-form {
+        max-width: 100%;
+
+        gap: 8px;
+    }
+
+    .newsletter-form input {
+        font-size: 10px;
+    }
+
+    .newsletter-form button {
+        font-size: 8px;
+    }
+
+
+    /* BOTTOM */
+
+    .footer-bottom {
+        width: calc(100% - 40px);
+
+        padding: 18px 0 28px;
+    }
+
+    .footer-bottom p {
+        font-size: 9px;
+        line-height: 15px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 375px) {
+
+    .benefits {
+        padding: 32px 18px;
+
+        gap: 24px;
+    }
+
+    .benefit {
+        gap: 12px;
+    }
+
+    .benefit-icon {
+        width: 40px;
+        height: 40px;
+
+        flex-basis: 40px;
+
+        font-size: 21px;
+    }
+
+    .benefit-text h3 {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .benefit-text p {
+        font-size: 9px;
+        line-height: 14px;
+    }
+
+
+    .footer-container {
+        width: calc(100% - 30px);
+
+        gap: 28px;
+
+        padding: 35px 0 25px;
+    }
+
+    .footer-brand h2 {
+        font-size: 20px;
+    }
+
+    .footer-brand p {
+        font-size: 10px;
+    }
+
+    .footer-column a {
+        font-size: 10px;
+    }
+
+    .newsletter-form input {
+        font-size: 9px;
+    }
+
+    .newsletter-form button {
+        font-size: 7px;
+    }
+
+    .footer-bottom {
+        width: calc(100% - 30px);
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 320px) {
+
+    .benefits {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .benefit-icon {
+        width: 36px;
+        height: 36px;
+
+        flex-basis: 36px;
+
+        font-size: 19px;
+    }
+
+    .benefit-text h3 {
+        font-size: 12px;
+    }
+
+    .benefit-text p {
+        font-size: 8px;
+    }
+
+    .footer-container {
+        width: calc(100% - 24px);
+    }
+
+    .footer-bottom {
+        width: calc(100% - 24px);
+    }
+}
